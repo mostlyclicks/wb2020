@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../../components/layout"
@@ -17,7 +17,7 @@ const Careers = ( {data} ) => {
   
   const EmpOps = () => {
     return (
-      empOpportunites.map(job => <p>{RichText.asText(job.node.title)}</p>)
+      empOpportunites.map(job => <p><Link to={job.node._meta.uid}>{RichText.asText(job.node.title)}</Link></p>)
     )
   }
 
@@ -76,6 +76,9 @@ export const query = graphql`
       edges {
         node {
           title
+          _meta {
+            uid
+          }
         }
       }
     }
