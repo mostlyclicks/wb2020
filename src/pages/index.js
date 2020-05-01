@@ -8,6 +8,7 @@ import HeroSection from "../components/Home/hero-section"
 import block1 from '../images/1JeffBrian2017.jpeg'
 import HeroBG from "../images/hero_8918-bg3.jpg"
 import { device } from "../components/media-queries"
+import Mission from "../components/mission"
 
 
 const IndexPage = () => (
@@ -19,6 +20,7 @@ const IndexPage = () => (
       
       <HomeGrid />
     </MainSection>
+    <Mission />
   </Layout>
 )
 

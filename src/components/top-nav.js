@@ -12,7 +12,7 @@ const TopNav = () => {
     <StyledTopNav>
       <ul>
         <li>
-          <Link to="/employment-opportunities">Employment Opportunities</Link>
+          <Link to="/firm/careers">Careers</Link>
         </li>
         <li>
           <a href="/#">Submit Bids</a>
