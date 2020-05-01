@@ -70,7 +70,7 @@ const Footer = () => {
               <br />
               Fax: 507.895.8438
               <br />
-              <a href="mailto:info@wieserbrothers.com">
+              <a id="email" href="mailto:info@wieserbrothers.com">
                 info@wieserbrothers.com
               </a>
             </p>
@@ -78,22 +78,22 @@ const Footer = () => {
             <ul className="social-nav">
               <li>
                 <a href="#">
-                  <FaFacebook />
+                  <FaFacebook size={28} />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FaLinkedin />
+                  <FaLinkedin size={28}  />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FaYoutube />
+                  <FaYoutube size={28}  />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FaInstagram />
+                  <FaInstagram size={28}  />
                 </a>
               </li>
             </ul>
@@ -176,16 +176,25 @@ const StyledFooter = styled.footer`
     padding: 4px;
     text-decoration: none;
 
+    
+
     &:hover {
       transition: .6s;
       background-color: var(--orange);
       color:#fff;
     }
   }
+   a#email {
+      margin:0;
+      padding:0;
+    }
 
   .social-nav {
     display: flex;
     flex-direction: row;
+    a {
+      color:var(--orange);
+    }
     li {
       margin: 0 0.8rem 0 0;
     }

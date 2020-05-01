@@ -95,10 +95,10 @@ const MainDiv = styled.div`
   display:inline-grid;
   width:100%;
   div:nth-child(1) {
-    border-top:6px solid var(--orange);
+    border-top:3px solid var(--orange);
     margin:20px;
     color:var(--orange);
-    background-color:var(--darkGray);
+    background-color: var(--darkGray);
     h1 {font-family:'IBM Plex Serif';}
     h3 {
       font-family:'Open Sans';

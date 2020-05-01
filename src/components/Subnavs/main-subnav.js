@@ -34,7 +34,7 @@ const FirmSubnav = () => (
         <Link to="/firm/awards-recognition">Awards &amp; Recognition</Link>
       </li>
       <li>
-        <Link to="/firm/employment-opportunities">Employment Opportunities</Link>
+        <Link to="/firm/careers">Careers</Link>
       </li>
     </ul>
   </>

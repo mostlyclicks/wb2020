@@ -82,7 +82,7 @@ width:100%;
     color:#ffffff;
     font-size:28px;
     font-family:'IBM Plex Serif';
-    background-color:rgba(0,0,0,.7);
+    background-color: var(--darkGray);
     padding:2rem 3rem;
     box-shadow:5px 5px 10px rgba(0,0,0,.2);
     border-top:6px solid var(--orange);
