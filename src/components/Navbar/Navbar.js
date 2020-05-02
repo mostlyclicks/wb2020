@@ -13,7 +13,7 @@ import { device } from "../media-queries"
 
 
 
-//<h1>{siteTitle}</h1>
+
   
   const Navbar = ({ siteTitle, menuLinks }) => {
     const [navbarOpen, setNavbarOpen] = useState(false)
