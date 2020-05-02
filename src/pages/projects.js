@@ -16,12 +16,23 @@ const Projects = ( {data} ) => {
       <h1>Projects</h1>
       {projects.map(project => {
         return (
-          <h3>
-            <Link to={`/projects/${project.node._meta.uid}`}>
-              {RichText.asText(project.node.title)}
-              
-            </Link>
-          </h3>
+          <>
+            <h3>
+              <Link to={`/projects/${project.node._meta.uid}`}>
+                {RichText.asText(project.node.title)}
+                
+              </Link>
+            </h3> 
+
+            {project.node.body.map(({fields}) => {
+              const firstImage = fields[0]
+              return (
+                <div>
+                  <img src={firstImage.image.url} alt={firstImage.image.alt} style={{ width: `300px` }}/>
+                </div>              
+              )
+            })}
+          </>
         )
       })}
       </ProjectWrapper>
@@ -32,8 +43,6 @@ const Projects = ( {data} ) => {
 
 export default Projects
 
-
-// get list of all projects
 
 export const query = graphql`
          {
