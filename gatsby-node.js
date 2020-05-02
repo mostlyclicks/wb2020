@@ -37,6 +37,18 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+
+          allTestimonials {
+            edges {
+              node {
+                title
+                testimonial_text
+                _meta {
+                  uid
+                }
+              }
+            }
+          }
         }
       }
     `)
@@ -44,9 +56,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const employmentOppsList = result.data.prismic.allEmployment_opportunitys.edges;
   const newsEventsList = result.data.prismic.allNews_and_eventss.edges;
+  const testimonialList = result.data.prismic.allTestimonials.edges;
 
   const empOppsTemplate = require.resolve(`./src/templates/empOps.js`)
   const newsEventsTemplate = require.resolve(`./src/templates/newsEvents.js`)
+  const testimonialTemplate = require.resolve(`./src/templates/testimonialsTemplate.js`)
+
 
 
   employmentOppsList.forEach(edge => {
@@ -67,6 +82,18 @@ exports.createPages = async ({ graphql, actions }) => {
       match: '/news-events/:uid',
       path: `/news-events/${edge.node._meta.uid}`,
       component: newsEventsTemplate,
+      context: {
+        uid: edge.node._meta.uid,
+      },
+    })
+  })
+
+  testimonialList.forEach(edge => {
+    createPage({
+      type: 'Testimonial',
+      match: '/firm/testimonials/:uid',
+      path: `/firm/testimonials/${edge.node._meta.uid}`,
+      component: testimonialTemplate,
       context: {
         uid: edge.node._meta.uid,
       },

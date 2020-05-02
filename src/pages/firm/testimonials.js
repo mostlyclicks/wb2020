@@ -17,7 +17,7 @@ const Testimonials = ( {data} ) => {
         {testimonialList.map(quote => {
           return (
             <li>
-              {RichText.asText(quote.node.title)} - {RichText.asText(quote.node.person_quoted)}
+              <Link to={`/firm/testimonials/${quote.node._meta.uid}`}>{RichText.asText(quote.node.title)} - {RichText.asText(quote.node.person_quoted)}</Link>
               {RichText.asText(quote.node.testimonial_text)}
             </li>
           )
@@ -39,6 +39,9 @@ export const query = graphql`
           title
           person_quoted
           testimonial_text
+          _meta {
+            uid
+          }
         }
       }
     }
