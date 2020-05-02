@@ -17,7 +17,7 @@ const Careers = ( {data} ) => {
   
   const EmpOps = () => {
     return (
-      empOpportunites.map(job => <p><Link to={job.node._meta.uid}>{RichText.asText(job.node.title)}</Link></p>)
+      empOpportunites.map(job => <p><Link to={`/careers/${job.node._meta.uid}`}>{RichText.asText(job.node.title)}</Link></p>)
     )
   }
 

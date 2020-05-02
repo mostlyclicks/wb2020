@@ -60,7 +60,6 @@ module.exports = {
           match: '/projects/:uid',
           path: '/project',
           component: require.resolve('./src/templates/project.js')
-
         }],
         //accessToken:
            // optional
