@@ -26,14 +26,28 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+
+          allNews_and_eventss {
+            edges {
+              node {
+                title 
+                _meta {
+                  uid
+                }
+              }
+            }
+          }
         }
       }
     `)
   )
 
   const employmentOppsList = result.data.prismic.allEmployment_opportunitys.edges;
+  const newsEventsList = result.data.prismic.allNews_and_eventss.edges;
 
   const empOppsTemplate = require.resolve(`./src/templates/empOps.js`)
+  const newsEventsTemplate = require.resolve(`./src/templates/newsEvents.js`)
+
 
   employmentOppsList.forEach(edge => {
     createPage({
@@ -41,6 +55,18 @@ exports.createPages = async ({ graphql, actions }) => {
       match: '/careers/:uid',
       path: `/careers/${edge.node._meta.uid}`,
       component: empOppsTemplate,
+      context: {
+        uid: edge.node._meta.uid,
+      },
+    })
+  })
+
+  newsEventsList.forEach(edge => {
+    createPage({
+      type: 'NewsEvent',
+      match: '/news-events/:uid',
+      path: `/news-events/${edge.node._meta.uid}`,
+      component: newsEventsTemplate,
       context: {
         uid: edge.node._meta.uid,
       },

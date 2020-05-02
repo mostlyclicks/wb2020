@@ -13,7 +13,7 @@ const NewsEvents = ( {data} ) => {
       <h1>News & Events</h1>
       {newsEvents.map(article => {
         return (
-          <h3>{RichText.asText(article.node.title)}</h3>
+          <h3><Link to={`/news-events/${article.node._meta.uid}`}>{RichText.asText(article.node.title)}</Link></h3>
         )
       })}
     </Layout>
@@ -32,6 +32,9 @@ export const query = graphql`
       edges {
         node {
           title
+          _meta {
+            uid
+          }
         }
       }
     }
