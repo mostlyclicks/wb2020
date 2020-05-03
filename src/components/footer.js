@@ -21,13 +21,13 @@ const Footer = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/our-firm">Our Firm</Link>
+                <Link to="/firm">Our Firm</Link>
               </li>
               <li>
-                <Link to="/our-services">Our Services</Link>
+                <Link to="/services">Our Services</Link>
               </li>
               <li>
-                <Link to="/our-commitment">Our Commitment</Link>
+                <Link to="/commitment">Our Commitment</Link>
               </li>
               <li>
                 <Link to="/projects">Projects</Link>
@@ -44,19 +44,20 @@ const Footer = () => {
                 <Link to="/contact-us">Contact Us</Link>
               </li>
               <li>
-                <Link to="/#employment-opportunities">
-                  Employment Opportunities
+                <Link to="/careers">
+                  Careers
                 </Link>
               </li>
               <li>
-                <Link to="/#submit-bids">Submit Bids</Link>
+                <a href="mailto:bids@wieserbrothers.com">Submit Bids</a>
               </li>
               <li>
-                <Link to="/#info">Info</Link>
+                <a href="mailto:info@wieserbrothers.com">Info</a>
               </li>
               <li>
-                <Link to="/#msds">MSDS</Link>
+                <a href="http://www.wieserbrothers.com/redirects">MSDS</a>
               </li>
+              <li><a href="https://www.employeenavigator.com/benefits/Account/Login" target="_blank">Employee Login</a></li>
             </ul>
           </div>
 
@@ -125,7 +126,7 @@ const FooterWrapper = styled.div`
     color:rgba(255,255,255,.7);
   }
 
-  @media ${device.mobileM} {
+  @media ${device.tablet} {
     max-width: 768px;
     
     li {
@@ -133,8 +134,8 @@ const FooterWrapper = styled.div`
       font-size: 110%;
     }
   }
-  @media ${device.tablet} {
-    max-width: 978px;
+  @media ${device.laptop} {
+    max-width: 960px;
     
     font-size: 14px;
     li {
@@ -142,7 +143,7 @@ const FooterWrapper = styled.div`
       font-size: 95%;
     }
   }
-  @media ${device.desktop} {
+  @media ${device.laptopL} {
     
     max-width: 1200px;
   }
