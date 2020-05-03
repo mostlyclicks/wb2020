@@ -84,7 +84,7 @@ const ProjectWrapper = styled.section`
   
   display:grid;
   grid-template-columns:1fr;
-  grid-gap:20px;
+  grid-gap:30px;
   padding:20px;
   div.header {
     width:100%;
@@ -95,7 +95,7 @@ const ProjectWrapper = styled.section`
   }
   div {
     display:grid;
-    grid-gap:40px;
+    grid-gap:50px;
     grid-template-row:1fr;
     h3 {margin-top:0px;
       font-family:'IBM Plex Serif';
@@ -122,10 +122,6 @@ const ProjectWrapper = styled.section`
       }
     }
   }
-
-  
-
-  
 
   @media ${device.tablet} {
     margin:40px auto;
@@ -154,7 +150,7 @@ const MainContent = styled.main`
   
   display:grid;
   
-  grid-gap:20px;
+  grid-gap:40px;
   div {
     width:100%;
   }
