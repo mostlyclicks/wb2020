@@ -1,11 +1,13 @@
 import React from 'react'
 import L2PagesLayout from "../../components/l2-page-template"
+import bgImage from "../../images/ABC-wi.jpg"
 
 const ProfessionalAffiliations = () => (
   <>
     <L2PagesLayout 
       title={`Professional Affiliations`}
       subnav={`firm`}
+      backgroundImage={bgImage}
       content = {`
         <ul>
           <li>7 Rivers Region Alliance</li>

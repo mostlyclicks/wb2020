@@ -1,10 +1,13 @@
 import React from 'react'
 import L2PagesLayout from "../components/l2-page-template"
+import bgImage from "../images/IMG_2273_employment_page-web.jpeg"
+
 
 const OurCommitment = () => (
   <L2PagesLayout 
       title = {`Our Commitment`}
       subnav = {`commitment`}
+      backgroundImage={bgImage}
       content = {`
         <h3>Trust</h3>
         <p>Wieser Brothers General Contractor, Inc. is a family-owned and operated firm based in La Crescent, MN. Founded in 1994 by Jeff and Brian Wieser, the company has grown into a full-service integrated 120 person team that includes journeyman carpenters, certified concrete finishers, steel erection crews, skilled field superintendents and professional project managers, all dedicated to delivering quality construction services. Wieser Brothers is the leader in design-build services, partnering closely with clients to meet current and future building needs with intelligence and efficiency. Trust is the cornerstone of any Wieser Brothers project. Over 60% of annual sales is in repeat business from satisfied customers.</p>

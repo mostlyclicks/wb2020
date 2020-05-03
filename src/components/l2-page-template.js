@@ -71,9 +71,7 @@ const MainContent = styled.main`
   font-family:'Open Sans';
   font-weight:400 !important;
   margin-top:2.5rem;
-  border:1px solid red;
 `
-
 const L2Title = styled.div`
 width:100%;
   h1 {

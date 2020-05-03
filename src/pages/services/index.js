@@ -1,12 +1,13 @@
 import React from 'react'
-import Layout from '../../components/layout'
 import L2PagesLayout from '../../components/l2-page-template'
+import bgImage from "../../images/Action-Field-Picture.jpg"
 
 const OurServices = () => (
   <>
     <L2PagesLayout 
       title = {`Our Services`}
       subnav = {`services`}
+      backgroundImage={bgImage}
       content = {`
         <h3>Partnership Approach Services Provided</h3>
 
