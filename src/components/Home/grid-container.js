@@ -69,7 +69,8 @@ const GridContainer = styled.section`
   display: grid;
   grid-gap: 0px;
   @media ${device.tablet} {
-    grid-gap:20px;
+    padding-top:20px;
+    grid-gap:40px;
     grid-template-columns:1fr 1fr;
     max-width:768px;
     margin:0 auto;
