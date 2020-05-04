@@ -1,15 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import NavbarLinks from "./NavbarLinks"
 import Logo from './Logo'
-// import { FaBars } from "react-icons/fa"
-// import { IoMdClose } from "react-icons/io";
 import { device } from "../media-queries"
 
-// const closeWindow = function () {
-//   console.log('hey this function called')
-// }
+
 
 
   const Navbar = ({ siteTitle, menuLinks }) => {
@@ -46,7 +41,7 @@ import { device } from "../media-queries"
   font-weight:400;
   height:80px;
   display:flex;
-  background-color: rgba(0,87,60,.8);//#00573c
+  // background-color: rgba(0,87,60,.8);//#00573c
   position:relative;
   justify-content:space-between;
   text-transform:uppercase;
