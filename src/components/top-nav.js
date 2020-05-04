@@ -41,7 +41,8 @@ export default TopNav
 // STYLES ––––––––––––––––––––––––– //
 
 const StyledTopNav = styled.nav`
-
+  position:relative;
+  z-index:9000;
   background-color:#3d3d3d;
 
   ul {

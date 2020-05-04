@@ -37,35 +37,58 @@ import { device } from "../media-queries"
   export default Navbar
 
   const Navigation = styled.nav`
+  // border:1px solid red;
   font-family:'Open Sans';
   font-weight:400;
   height:80px;
   display:flex;
-  // background-color: rgba(0,87,60,.8);//#00573c
+  //background-color: rgba(0,87,60,.8);//#00573c
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00573c+0,00573c+72,00573c+100&1+0,0+90,0+100 */
+  background: -moz-linear-gradient(top,  rgba(0,87,60,1) 0%, rgba(0,87,60,0.2) 72%, rgba(0,87,60,0) 90%, rgba(0,87,60,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,87,60,1) 0%,rgba(0,87,60,0.2) 72%,rgba(0,87,60,0) 90%,rgba(0,87,60,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,87,60,1) 0%,rgba(0,87,60,0.2) 72%,rgba(0,87,60,0) 90%,rgba(0,87,60,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00573c', endColorstr='#0000573c',GradientType=0 ); /* IE6-9 */
+
+
+
+
+
+
+
   position:relative;
   justify-content:space-between;
   text-transform:uppercase;
   
-  margin:0 auto;
+  margin:0px auto;
   padding:0 5vw;
   z-index:2;
   align-self:center;
   a {color:#fff;}
   
-
-
-
   @media ${device.tablet} {
-    max-width: 768px;
+    // max-width: 768px;
+    margin:0px auto;
+    height:140px;
+    justify-content:flex-start;
+    font-size:12px;
+    margin-right:3rem;
+    
+    width:100%;
+    
+    clip-path:polygon(0% 0%, 100% 0%, 97% 50%, 0% 100%);
 
   }
   @media ${device.laptop} {
-    max-width: 960px;
-// border:1px solid yellow;
+    // max-width: 960px;
+    
+    clip-path:polygon(3% 0%, 100% 0%, 97% 40%, 10% 100%);
+    justify-content:space-around;
+
     font-size:14px;
   }
   @media ${device.laptopL} {
-    max-width: 1200px;
+    // max-width: 1200px;
   }
 `
 
@@ -86,7 +109,20 @@ import { device } from "../media-queries"
   justify-content:flex-end;
   align-items:center;
   
+
+  @media ${device.tablet} {
+    
+    margin-left:40px;
+    margin-top:-25px;
+  }
+
+  @media ${device.laptop} {
+    margin-right:50px;
+  }
+
+  
   @media (max-width: 768px) {
+    
     flex-direction:column;
     position:fixed;
     width:100%;

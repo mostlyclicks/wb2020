@@ -21,7 +21,7 @@ export default NavbarLinks
 
 const NavItem = styled(Link)`
  font-family:'Open Sans';
-  font-weight:400;       
+  font-weight:700;       
  text-decoration: none;
  color:#111;
  display:inline-block;
@@ -29,6 +29,7 @@ const NavItem = styled(Link)`
  margin:0 1vw;
  transition: all 200ms ease-in;
  position:relative;
+ 
 
  :after {
    position: absolute;

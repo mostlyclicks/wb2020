@@ -28,7 +28,7 @@ const Logo = () => {
   `)
   return (
     <LogoWrap as={Link} to="/">
-      <img src={WBLogo} alt="Wieser Brothers Logo" width="130" />
+      <img src={WBLogo} alt="Wieser Brothers Logo" width="160" />
       {/*<Img fluid={data.file.childImageSharp.fluid} alt="logo image" />
       <Img fixed={data.file.childImageSharp.fixed} alt="logo" />*/}
     </LogoWrap>

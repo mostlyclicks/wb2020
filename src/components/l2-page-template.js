@@ -111,12 +111,13 @@ const L2MainImage = styled.div`
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  @media ${device.tablet} {
-    height:350px;
-  }
+  // @media ${device.tablet} {
+  //   height:350px;
+  // }
   @media ${device.tablet} {
     height:400px;
     background-position-y:-120px;
+    margin-top:-140px;
   }
   @media ${device.laptop} {
     height:550px;
