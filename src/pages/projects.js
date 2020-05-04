@@ -14,11 +14,15 @@ const Projects = ( {data} ) => {
   return (
     <Layout>
     <ProjectWrapper>
+        <ProjectHeader>
+          <L2Title>
+            <h1>Projects</h1>
+          </L2Title>
+        </ProjectHeader>
         
     <MainContent>
-          <div className="header">
-            <h1>Projects</h1>
-          </div>
+        
+        <ProjectList>
           {projects.map(project => {
             return (
               <div>
@@ -40,6 +44,7 @@ const Projects = ( {data} ) => {
               </div>
             )
           })}
+          </ProjectList>
     </MainContent>
     <L2Navigation>
           <SideBarAddress />
@@ -81,18 +86,18 @@ export const query = graphql`
 
 const ProjectWrapper = styled.section`
   margin:40px auto;
-  
+  border:1px solid red;
   display:grid;
   grid-template-columns:1fr;
   grid-gap:30px;
   padding:20px;
-  div.header {
-    width:100%;
+  // div.header {
+  //   width:100%;
     
-    h1 {
-      font-family:'IBM Plex Serif';
-    }
-  }
+  //   h1 {
+  //     font-family:'IBM Plex Serif';
+  //   }
+  // }
   div {
     display:grid;
     grid-gap:50px;
@@ -125,20 +130,21 @@ const ProjectWrapper = styled.section`
 
   @media ${device.tablet} {
     margin:40px auto;
-    grid-template-columns:2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    border:1px solid green;
     
     padding:0px;
     max-width:768px;
     
-    div.header {
-      grid-area:1/1/2/3;
-    }
+    // div.header {
+    //   grid-area:1/1/2/3;
+    // }
     img {
       object-fit:cover !important;
     }
   }
   @media ${device.laptop} {
-    grid-template-columns:3fr 1fr;
+    grid-template-columns:1fr;
     max-width:960px;
   }
   @media ${device.laptopL} {
@@ -164,4 +170,39 @@ const MainContent = styled.main`
 
 const L2Navigation = styled.aside`
 `
+const L2Title = styled.div`
+width:100%;
+  h1 {
+    display:inline-block;
+    margin-bottom:-30px;
+    margin-left:auto;
+    margin-right:auto;
+    color:#ffffff;
+    font-size:28px;
+    font-family:'IBM Plex Serif';
+    background-color: var(--darkGray);
+    padding:2rem 3rem;
+    box-shadow:5px 5px 10px rgba(0,0,0,.2);
+    border-top:6px solid var(--orange);
+  }
+@media ${device.tablet} {
+  max-width:768px;
+  margin:0 auto;
+}
+@media ${device.laptop} {
+  max-width:960px;
+  margin:0 auto;
+}
+@media ${device.laptopL} {
+  max-width:1200px;
+  margin:0 auto;
+}
+`
 
+const ProjectHeader = styled.div`
+  display:grid;
+  grid-template-row:1fr;
+  border:1px solid black;
+`
+
+const ProjectList = styled.div``
