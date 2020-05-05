@@ -92,6 +92,7 @@ const Project = ({ data }) => {
 export default Project
 
 const MainDiv = styled.div`
+  
   display:inline-grid;
   width:100%;
   div:nth-child(1) {
@@ -114,10 +115,8 @@ const MainDiv = styled.div`
   }
 
   div:nth-child(n + 6) {display:none;}
-  
   margin:0 auto;
   grid-gap:3px; 
-  
   div:nth-child(n+3) {
     height:400px;
     background-position:center;
@@ -128,9 +127,6 @@ const MainDiv = styled.div`
   .box {
     padding:1rem;
   }
-
-  
-
 
   @media ${device.tablet} {
     
@@ -154,14 +150,11 @@ const MainDiv = styled.div`
 
     //TITLE BOX
     div:nth-child(1) {
-      grid-area:2 / 4 / 3/ 6;   
+      grid-area:4 / 4 / 3/ 6;   
       background-color:var(--darkGray);
       order:3;
       box-shadow:10px 10px 25px rgba(0,0,0,.2);
       height:80%;
-      
-
-      
     }
     //DESCRIPTION TEXT
     div:nth-child(2) {
@@ -172,7 +165,7 @@ const MainDiv = styled.div`
     }
     //MAIN PICTURE
     div:nth-child(3) {
-      grid-area:1 / 1 / 4 / 5;
+      grid-area:1 / 1 / 4 / 6;
       background-size:cover;
       box-shadow:5px 5px 15px rgba(0,0,0,.25);
       
@@ -186,11 +179,12 @@ const MainDiv = styled.div`
     }
     div:nth-child(5) {
       background-color:gray;
-      grid-area: 4/ 4 / 6 / 6;
+      grid-area: 4/ 4 / 5 / 6;
       background-size:cover;
       background-position:center;
       box-shadow:3px 3px 10px rgba(0,0,0,.3);
       // display:none;
+      // border:1px solid red;
       
     }
     div:nth-child(6) {
@@ -220,7 +214,7 @@ const MainDiv = styled.div`
 
     //TITLE BOX
     div:nth-child(1) {
-      grid-area:2 / 4 / 3 / 6;   
+      grid-area:4 / 4 / 3 / 6;   
             
     }
 
@@ -232,13 +226,17 @@ const MainDiv = styled.div`
     }
 
     div:nth-child(3) {
-      grid-area:1 / 1 / 4 / 5;
+      grid-area:1 / 1 / 4 / 6;
       background-size:cover;
       background-position:center;
       
       
       // border:1px solid red;
       // height:600px;
+    }
+    div:nth-child(5) {
+      grid-area: 4/ 4 / 6 / 6;
+      // border:1px solid green;
     }
 
 
@@ -251,26 +249,28 @@ const MainDiv = styled.div`
 
 
 const StyledProjectGrid = styled.section`
+  
   width:100%;
-  margin:40px auto;
+  
   div {
     img {width:100%;}
   }
 
   @media ${device.tablet} {
     // max-width:768px;
+    margin:-140px auto 40px auto;
     max-width:100%;
-    margin-top:0px;
+    margin-top:-190px;
   }
   @media ${device.laptop} {
     // max-width:960px;
-    max-width:90%;
+    max-width:100%;
 
   }
 
   @media ${device.laptopL} {
     // max-width:1200px;
-    max-width:80%;
+    max-width:100%;
   }
   
  
