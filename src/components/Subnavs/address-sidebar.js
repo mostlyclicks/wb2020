@@ -22,7 +22,7 @@ const SideBarAddress = () => (
 export default SideBarAddress
 
 const StyledAddress = styled.div`
-  margin-top:8rem;
+  // margin-top:8rem;
   font-family:'Open Sans';
   font-weight:400;
   background-color:#f3f3f3;

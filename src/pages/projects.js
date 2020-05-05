@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import { device } from "../components/media-queries"
 import SideBarAddress from "../components/Subnavs/address-sidebar"
+import bgImg from "../images/DJI_0317.jpg"
 
 
 const Projects = ( {data} ) => {
@@ -14,41 +15,45 @@ const Projects = ( {data} ) => {
   return (
     <Layout>
     <ProjectWrapper>
-        <ProjectHeader>
+        <L2MainImage >
           <L2Title>
             <h1>Projects</h1>
           </L2Title>
-        </ProjectHeader>
-        
-    <MainContent>
-        
-        <ProjectList>
-          {projects.map(project => {
-            return (
-              <div>
-                <h3>
-                  <Link to={`/projects/${project.node._meta.uid}`}>
-                    {RichText.asText(project.node.title)}
+        </L2MainImage>
+    
+        <MainContent>
+            
+            <ProjectList>
+              {projects.map(project => {
+                return (
+                  <ProjectItem>
+                    <h3>
+                      <Link to={`/projects/${project.node._meta.uid}`}>
+                        {RichText.asText(project.node.title)}
 
-                  </Link>
-                </h3>
+                      </Link>
+                    </h3>
 
-                {project.node.body.map(({ fields }) => {
-                  const firstImage = fields[0]
-                  return (
-                    <div className="thumbnail">
-                      <img src={firstImage.image.url} alt={firstImage.image.alt} style={{ width: `100%` }} />
-                    </div>
-                  )
-                })}
-              </div>
-            )
-          })}
-          </ProjectList>
-    </MainContent>
-    <L2Navigation>
-          <SideBarAddress />
-    </L2Navigation>
+                    {project.node.body.map(({ fields }) => {
+                      const firstImage = fields[0]
+                      return (
+                        <div className="thumbnail">
+                          <img src={firstImage.image.url} alt={firstImage.image.alt} style={{ width: `100%` }} />
+                        </div>
+                      )
+                    })}
+                  </ProjectItem>
+                )
+              })}
+            </ProjectList>
+
+          <L2Navigation>
+            <SideBarAddress />
+          </L2Navigation>
+
+        </MainContent>
+
+        
           
       </ProjectWrapper>
     </Layout>
@@ -85,90 +90,20 @@ export const query = graphql`
        `
 
 const ProjectWrapper = styled.section`
-  margin:40px auto;
-  border:1px solid red;
-  display:grid;
-  grid-template-columns:1fr;
-  grid-gap:30px;
-  padding:20px;
-  // div.header {
-  //   width:100%;
-    
-  //   h1 {
-  //     font-family:'IBM Plex Serif';
-  //   }
-  // }
-  div {
-    display:grid;
-    grid-gap:50px;
-    grid-template-row:1fr;
-    h3 {margin-top:0px;
-      font-family:'IBM Plex Serif';
-      a {
-        text-decoration:none;
-        display:block;
-        color:var(--orange);
-        background-color:var(--darkGray);
-        padding:1rem;
-        &:hover {
-          color:#ffffff;
-          transition:.8s;
-          background-color:var(--orange);
-        }
-      }
-      grid-area:1/1/1/2;
-      z-index:25;
-    }
-    .thumbnail {
-      grid-area:1/1/2/2;
-      img {
-        height:300px;
-        object-fit:cover;
-      }
-    }
-  }
-
-  @media ${device.tablet} {
-    margin:40px auto;
-    grid-template-columns: 1fr 1fr;
-    border:1px solid green;
-    
-    padding:0px;
-    max-width:768px;
-    
-    // div.header {
-    //   grid-area:1/1/2/3;
-    // }
-    img {
-      object-fit:cover !important;
-    }
-  }
-  @media ${device.laptop} {
-    grid-template-columns:1fr;
-    max-width:960px;
-  }
-  @media ${device.laptopL} {
-    max-width:1200px;
-  }
-`
-
-const MainContent = styled.main`
-  
-  display:grid;
-  
-  grid-gap:40px;
-  div {
-    width:100%;
-  }
-
-  @media ${device.tablet} {
-    grid-template-columns:1fr 1fr;
-    
-  }
 
 `
 
-const L2Navigation = styled.aside`
+const L2MainImage = styled.div`
+  background-image:url(${bgImg});
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-end;
+  height:300px;
+  width:100%;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  margin-top:-140px;
 `
 const L2Title = styled.div`
 width:100%;
@@ -199,10 +134,75 @@ width:100%;
 }
 `
 
-const ProjectHeader = styled.div`
-  display:grid;
-  grid-template-row:1fr;
-  border:1px solid black;
+const MainContent = styled.main`
+    display:grid;
+    grid-template-columns:1fr;
+    margin-top:80px;
+    padding:20px;
+    grid-gap:20px;
+  }
+
+  @media ${device.tablet} {
+    margin:80px auto;
+    grid-template-columns: 2fr 1fr;
+    padding:0px;
+    max-width:768px;
+  }
+  @media ${device.laptop} {
+    grid-template-columns:3fr 1fr ;
+    max-width:960px;
+  }
+  @media ${device.laptopL} {
+    max-width:1200px;
+  }
 `
 
-const ProjectList = styled.div``
+const ProjectList = styled.div`
+  display:grid;
+  grid-template-columns:1fr;
+  grid-gap:50px;
+  @media ${device.tablet} {
+    grid-template-columns:1fr 1fr;
+  }
+  @media ${device.laptop} {
+    grid-template-columns:1fr 1fr;
+  }
+  @media ${device.laptopL} {
+    grid-template-columns:1fr 1fr 1fr;
+  }
+`
+
+const L2Navigation = styled.aside`
+
+`
+
+const ProjectItem = styled.div`
+  display: grid;
+  grid-gap: 50px;
+  grid-template-row: 1fr;
+  h3 {
+    margin-top: 0px;
+    font-family: 'IBM Plex Serif';
+    a {
+      text-decoration: none;
+      display: block;
+      color: var(--orange);
+      background-color: var(--darkGray);
+      padding: 1rem;
+            &: hover {
+        color:#ffffff;
+        transition: .8s;
+        background-color: var(--orange);
+      }
+    }
+    grid-area: 1 / 1 / 1 / 2;
+    z-index: 25;
+  }
+      .thumbnail {
+    grid-area: 1 / 1 / 2 / 2;
+    img {
+      height: 300px;
+      object-fit: cover;
+    }
+
+`

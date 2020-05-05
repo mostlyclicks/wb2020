@@ -42,9 +42,6 @@ const Content = styled.section`
 display:grid;
 grid-template-columns:1fr;
 grid-gap:20px;
-
-
-
 padding:1.5rem;
  
   @media ${device.tablet} {
