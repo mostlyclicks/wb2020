@@ -63,6 +63,7 @@ const NewsEventWrapper = styled.section`
   grid-template-columns:1fr;
   grid-gap:40px;
   
+  
 
   @media ${device.tablet} {
     max-width:768px;
