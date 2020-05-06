@@ -86,7 +86,8 @@ export const query = graphql`
 }
 `
 const ContentWrapper = styled.div`
-  // border:1px solid red;
+  
+  margin-top:-140px;
   
 `
 

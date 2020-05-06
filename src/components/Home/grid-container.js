@@ -40,7 +40,7 @@ const HomeGrid = () => {
             <h1>Careers</h1>
             <h3>Constructing your career path?  Join Wieser Brothers Crew</h3>
             <p>See all of our job opportunities</p>
-            <Link to="/">Start here</Link>
+            <Link to="/firm/careers">Start here</Link>
           </GridBox>
         </GridItem>
       </GridContainer>
