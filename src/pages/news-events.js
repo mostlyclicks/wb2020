@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import { device } from "../components/media-queries"
 import SideBarAddress from "../components/Subnavs/address-sidebar"
+import bgImg from "../images/BuildingAerial.jpg"
 
 
 
@@ -14,10 +15,13 @@ const NewsEvents = ( {data} ) => {
 
   return (
     <Layout>
-      <HeaderSection>
-        <h1>News & Events</h1>
-      </HeaderSection>
-      <NewsWrapper>
+    <NewsWrapper>
+      <L2MainImage>
+        <L2Title>
+          <h1>News & Events</h1>
+        </L2Title>
+      </L2MainImage>
+      <MainContent>
         <NewsList>
         {newsEvents.map(article => {
           return (
@@ -31,8 +35,8 @@ const NewsEvents = ( {data} ) => {
         <L2Navigation>
           <SideBarAddress />
         </L2Navigation>
+      </MainContent>
       </NewsWrapper>
-
     </Layout>
   )
 }
@@ -58,30 +62,57 @@ export const query = graphql`
     }
   }
 }
+`
+
+const NewsWrapper = styled.div`
 
 `
-const HeaderSection = styled.section`
-    padding:20px;
-    margin:0 auto;
-    width:100%;
-    h1 {
-      font-family:'IBM Plex Serif';
-    }
-    @media ${device.tablet} {
-
-      max-width:768px;
-    } 
-    @media ${device.laptop} {
-      max-width:960px;
-    }
-    @media ${device.laptopL} {
-      max-width:1200px;
-    }  
+const L2MainImage = styled.section`
+  background-image:url(${bgImg});
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-end;
+  height:300px;
+  width:100%;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  margin-top:-140px;
 `
-const NewsWrapper = styled.section`
+
+const L2Title = styled.div`
+width:100%;
+  h1 {
+    display:inline-block;
+    margin-bottom:-30px;
+    margin-left:auto;
+    margin-right:auto;
+    color:#ffffff;
+    font-size:28px;
+    font-family:'IBM Plex Serif';
+    background-color: var(--darkGray);
+    padding:2rem 3rem;
+    box-shadow:5px 5px 10px rgba(0,0,0,.2);
+    border-top:6px solid var(--orange);
+  }
+@media ${device.tablet} {
+  max-width:768px;
+  margin:0 auto;
+}
+@media ${device.laptop} {
+  max-width:960px;
+  margin:0 auto;
+}
+@media ${device.laptopL} {
+  max-width:1200px;
+  margin:0 auto;
+}
+`
+
+
+const MainContent = styled.section`
     width:100%;
-    margin:0 auto;
-  
+    margin:80px auto;
     display:grid;
     grid-template-columns:1fr;
     @media ${device.tablet} {
@@ -114,7 +145,6 @@ const NewsList = styled.div`
 const L2Navigation = styled.aside`
 
 `
-
 
 const ArticleItem = styled.div`
   margin:20px 20px 20px 20px;

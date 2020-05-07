@@ -164,20 +164,33 @@ const L2MainImage = styled.div`
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
+  
   @media ${device.tablet} {
     height:350px;
   }
   @media ${device.tablet} {
-    height:400px;
-    background-position-y:-120px;
+    height:350px;
+    background-position-y:center;
   }
   @media ${device.laptop} {
-    height:550px;
-    background-position-y:-100px;
+    height:350px;
+    background-position-y:-450px;
   }
   @media ${device.laptopL} {
-    height:700px;
-    background-position-y:-200px;
+    margin:0 auto;
+    max-width:2100px;  
+    height:500px;  
+     background-position-y:-650px;
+     
+
+     
+  }
+  @media ${device.desktop} {
+    margin:0 auto;
+    height:500px;
+    background-position-y:-1000px;
+    
+    max-width:2500px;
   }
 `
 
