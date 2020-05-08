@@ -36,8 +36,6 @@ const Careers = ( {data} ) => {
          <MainContent>
            <h3>Current Openings</h3>
            <EmpOps />
-
-
            <p>
               <a href={workApp} title="Wieser Brothers Job Application   Fillable Form 12 21 19" class="btn btn-primary">Job Application 2020 PDF</a>
             </p>
@@ -48,10 +46,6 @@ const Careers = ( {data} ) => {
                         <p><a href="mailto:careers@wieserbrothers.com" title="careers@wieserbrothers.com">careers@wieserbrothers.com</a>
             <a href="/our-firm/employment-opportunities/safety-director" title="Safety Director"></a>
             </p>   
-
-  
-
-          
          </MainContent>
          <L2Navigation>
            <MainSubnav subnav="firm" />
@@ -174,13 +168,15 @@ const L2MainImage = styled.div`
   }
   @media ${device.laptop} {
     height:350px;
-    background-position-y:-450px;
+    background-position-y:-600px;
+    background-size:120%;
   }
   @media ${device.laptopL} {
     margin:0 auto;
     max-width:2100px;  
     height:500px;  
      background-position-y:-650px;
+     background-size:100%;
      
 
      

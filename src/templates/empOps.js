@@ -49,6 +49,8 @@ export default EmpOp
  `
 
  const JobDescription = styled.div`
+  font-family:'Open Sans';
+  font-weight:400;
     
  `
  const CareerHeader = styled.div`
