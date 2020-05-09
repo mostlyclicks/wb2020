@@ -9,7 +9,7 @@ import { device } from "./media-queries"
 
 const Header = ({ siteTitle, menuLinks }) => (
   <HeaderWrapper>
-    <Navbar siteTitle={siteTitle} menuLinks={menuLinks}/>
+    <Navbar siteTitle={siteTitle} menuLinks={menuLinks} />
   </HeaderWrapper>
 )
 
@@ -28,6 +28,7 @@ export default Header
 
 const HeaderWrapper = styled.section`
   width:100%;
+  // border:5px solid blue;
   // background-color:#00573c;
   
   margin:0 auto;
