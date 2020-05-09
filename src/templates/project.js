@@ -172,6 +172,7 @@ const MainDiv = styled.div`
     }
     div:nth-child(4) {
       background-color:green;
+      min-height:400px;
       grid-area:5 / 1 / 8 / 4;
       background-size:cover;
       box-shadow:3px 3px 10px rgba(0,0,0,.3);
