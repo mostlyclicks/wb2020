@@ -23,7 +23,7 @@ const HomeGrid = () => {
               <br />
               Excellence
             </h1>
-            <Link to="/">Learn more</Link>
+            <Link to="/commitment">Learn more</Link>
           </GridBox>
         </GridItem>
         <GridItem>

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -58,6 +58,7 @@ const Project = ({ data }) => {
               </div>
               <div id="project-description" className="box">
                 {RichText.render(proj.node.long_description)}
+                <Link to="/projects">Back to Projects</Link>
               </div>
 
               {proj.node.body.map(({ fields }) => {
@@ -156,7 +157,7 @@ const MainDiv = styled.div`
       background-color: var(--darkGray);
       order:1;
       padding:1rem;
-      grid-area:1  / 3 / 2 / 4 ;
+      grid-area:1  / 4 / 2 / 5 ;
       height:55%;
       width:80%;
       margin-top:20vh;
