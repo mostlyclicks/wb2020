@@ -196,7 +196,7 @@ const ProjectItem = styled.div`
       }
     }
     grid-area: 1 / 1 / 1 / 2;
-    z-index: 25;
+    z-index: 1;
   }
       .thumbnail {
     grid-area: 1 / 1 / 2 / 2;

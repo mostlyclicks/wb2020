@@ -42,8 +42,6 @@ export const query = graphql`
 const Project = ({ data }) => {
   
   const project = data.prismic.allProjects.edges
-
-  
   
   return (
     <Layout>
@@ -53,27 +51,22 @@ const Project = ({ data }) => {
 
           return (
             <MainDiv>
+
               <div id="project-title-location" className="box">
                 <h1>{RichText.asText(proj.node.title)}</h1>
-                
                 <h3>{proj.node.location}</h3>
               </div>
-
               <div id="project-description" className="box">
                 {RichText.render(proj.node.long_description)}
               </div>
 
               {proj.node.body.map(({ fields }) => {
-
                 return (
                   <>
                     {fields.map((field, index) => {
                       return (
-                        <div id={index} className="box"
-                          style={{ 
-                            backgroundImage: 'url(' + field.imageSharp.childImageSharp.fluid.srcWebp + ')'
-                          }}>
-                          
+                        <div id={index} className="box">
+                          <img src={field.imageSharp.childImageSharp.fluid.srcWebp} alt={field.image.url} />
                         </div>
                         )
                     })}            
@@ -91,188 +84,127 @@ const Project = ({ data }) => {
 
 export default Project
 
-const MainDiv = styled.div`
-  
-  display:inline-grid;
-  width:100%;
-  div:nth-child(1) {
-    border-top:3px solid var(--orange);
-    margin:20px;
-    color:var(--orange);
-    background-color: var(--darkGray);
-    h1 {font-family:'IBM Plex Serif';}
-    h3 {
-      font-family:'Open Sans';
-      font-weight:400;
-      
-    }
-  }
-  div:nth-child(2) {
-    p {margin-top:0;}
-    font-family:'Open Sans';
-    font-size:14pt;
-  
-  }
-
-  div:nth-child(n + 6) {display:none;}
-  margin:0 auto;
-  grid-gap:3px; 
-  div:nth-child(n+3) {
-    height:400px;
-    background-position:center;
-    background-repeat:no-repeat;
-    margin:10px 20px;
-  }
-  
-  .box {
-    padding:1rem;
-  }
-
-  @media ${device.tablet} {
-    
-    margin-top:40px;
-    margin-bottom:100px;
-    max-width:100%;
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    height:100vh;
-    grid-gap:2rem;
-
-    div #5 {
-      display:none;
-    }
-      
-    div:nth-child(n+3) {
-      height:auto;
-      
-    }
-
-    //TITLE BOX
-    div:nth-child(1) {
-      grid-area:4 / 4 / 3/ 6;   
-      background-color:var(--darkGray);
-      order:3;
-      box-shadow:10px 10px 25px rgba(0,0,0,.2);
-      height:80%;
-    }
-    //DESCRIPTION TEXT
-    div:nth-child(2) {
-      grid-area:4 / 1 / 5 / 4;
-      
-      order:4;
-      // display:none;
-    }
-    //MAIN PICTURE
-    div:nth-child(3) {
-      grid-area:1 / 1 / 4 / 6;
-      background-size:cover;
-      box-shadow:5px 5px 15px rgba(0,0,0,.25);
-      
-    }
-    div:nth-child(4) {
-      background-color:green;
-      min-height:400px;
-      grid-area:5 / 1 / 8 / 4;
-      background-size:cover;
-      box-shadow:3px 3px 10px rgba(0,0,0,.3);
-      // display:none;
-    }
-    div:nth-child(5) {
-      background-color:gray;
-      grid-area: 4/ 4 / 5 / 6;
-      background-size:cover;
-      background-position:center;
-      box-shadow:3px 3px 10px rgba(0,0,0,.3);
-      // display:none;
-      // border:1px solid red;
-      
-    }
-    div:nth-child(6) {
-      background-color:violet;
-      grid-area: 6 / 4 / 7 / 5;
-      background-size:cover;
-      background-position:center;
-      box-shadow:3px 3px 10px rgba(0,0,0,.3);
-      display:none !important;
-      
-    }
-    div:nth-child(7) {
-      background-color:violet;
-      grid-area: 6 / 5 / 8 / 6;
-      background-size:cover;
-      background-position:center;
-      display:none !important;
-      
-    }
-
-  }
-
-  @media ${device.laptop} {
-    // border:1px solid blue;
-    // max-width:960px;
-    
-
-    //TITLE BOX
-    div:nth-child(1) {
-      grid-area:4 / 4 / 3 / 6;   
-            
-    }
-
-    //DESCRIPTION TEXT
-    div:nth-child(2) {
-      column-count:2;
-      
-      
-    }
-
-    div:nth-child(3) {
-      grid-area:1 / 1 / 4 / 6;
-      background-size:cover;
-      background-position:center;
-      
-      
-      // border:1px solid red;
-      // height:600px;
-    }
-    div:nth-child(5) {
-      grid-area: 4/ 4 / 6 / 6;
-      // border:1px solid green;
-    }
-
-
-  }
-
-  @media ${device.laptopL} {
-    // max-width:1200px;
-  }
-`
-
 
 const StyledProjectGrid = styled.section`
-  
   width:100%;
-  
   div {
     img {width:100%;}
   }
 
   @media ${device.tablet} {
-    // max-width:768px;
-    margin:-140px auto 40px auto;
-    max-width:100%;
-    margin-top:-190px;
+
   }
   @media ${device.laptop} {
-    // max-width:960px;
-    max-width:100%;
+   
+  }
+  @media ${device.laptopL} {
+    
+  }
+`
 
+const MainDiv = styled.div`
+  
+  display:inline-grid;
+  // grid-gap:20px;
+  // padding:20px;
+  margin-bottom:20px;
+  h1 {font-family:'IBM Plex Serif';}
+    h3 {
+      font-family:'Open Sans';
+      font-weight:400;
   }
 
-  @media ${device.laptopL} {
-    // max-width:1200px;
-    max-width:100%;
+
+  div:nth-child(1) {
+      // border-top:3px solid var(--orange);
+      
+      color:var(--orange);
+      // background-color: var(--darkGray);
+      background-color:black;
+      // order:1;
+      padding:1rem;
+      width:100%;
+      padding-top:150px;
+      height:20vh;
+      margin-top:-150px;
+      // grid-area:1/1/3/6;
+    }
+  div:nth-child(2) {
+    padding:1rem;
+  }
+
+  @media ${device.tablet} {
+    display:grid;
+    grid-gap:10px;
+    grid-auto-rows:min-content;
+    padding:0px;
+    // grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    // grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    margin-top:-170px;
+    div {
+      img {
+        height:100%;
+        width:100%;
+        object-fit:cover;
+      }
+    }
+    
+    div:nth-child(1) {
+      border-top:3px solid var(--orange);
+      margin:20px;
+      color:var(--orange);
+      background-color: var(--darkGray);
+      order:1;
+      padding:1rem;
+      grid-area:1  / 3 / 2 / 6 ;
+      height:35%;
+      margin-top:20vh;
+    }
+
+    div:nth-child(2) {
+      order:2;
+      grid-area:3 / 1 / 4 / 2 ;
+      padding:1rem 2rem;
+      font-family:'Open Sans';
+      font-weight:400;
+      
+    }
+
+    //MAIN IMAGE
+    div:nth-child(3) {
+      grid-area:1 / 1 / 3 / 6 ;
+    
+    }
+
+    div:nth-child(4) {
+      grid-area:3 / 2 / 4 / 6 ;
+      
+    }
+    div:nth-child(5) {
+      
+    }
+    div:nth-child(6) {
+      
+      img {
+      
+        overflow:none;
+
+      }
+      
+    }
+    div:nth-child(7) {
+      // border:1px solid red;
+    }
+  }
+  @media ${device.laptop} {
+    div:nth-child(1) {
+    grid-area:1  / 3 / 2 / 6 ;
+
+  }
   }
   
- 
+
+  
 `
+
+
