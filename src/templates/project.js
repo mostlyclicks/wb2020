@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../components/layout"
+// import Image from 'gatsby-image'
 import { device } from "../components/media-queries"
 
 export const query = graphql`
@@ -67,7 +68,9 @@ const Project = ({ data }) => {
                     {fields.map((field, index) => {
                       return (
                         <div id={index} className="box">
+                        
                           <img src={field.imageSharp.childImageSharp.fluid.srcWebp} alt={field.image.url} />
+                        
                         </div>
                         )
                     })}            
