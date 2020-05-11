@@ -53,7 +53,7 @@ import { device } from "../media-queries"
   text-transform:uppercase;
   margin:0px auto;
   padding:0;
-  z-index:2;
+  z-index:11999;
   align-self:center;
   a {color:#fff;}
   
