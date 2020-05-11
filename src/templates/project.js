@@ -151,13 +151,14 @@ const MainDiv = styled.div`
     
     div:nth-child(1) {
       border-top:3px solid var(--orange);
-      margin:20px;
+      // margin:20px;
       color:var(--orange);
       background-color: var(--darkGray);
       order:1;
       padding:1rem;
-      grid-area:1  / 3 / 2 / 6 ;
-      height:35%;
+      grid-area:1  / 3 / 2 / 4 ;
+      height:55%;
+      width:80%;
       margin-top:20vh;
     }
 
