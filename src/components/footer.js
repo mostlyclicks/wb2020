@@ -39,6 +39,12 @@ const Footer = () => {
           <div>
             <ul>
               <li>
+                <a href="http://planroom.wieserbrothers.com/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                >Plan Room</a>
+              </li>
+              <li>
                 <Link to="/contact-us">Contact Us</Link>
               </li>
               <li>
