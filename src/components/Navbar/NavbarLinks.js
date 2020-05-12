@@ -6,7 +6,7 @@ const NavbarLinks = ({ menuLinks }) => (
   <>
       {console.log(menuLinks)}
       {menuLinks.map((link, i) => (
-        <NavItem to={link.link}>{link.name}</NavItem>
+        <NavItem to={link.link} key={i}>{link.name}</NavItem>
       ))}
   </>
 )

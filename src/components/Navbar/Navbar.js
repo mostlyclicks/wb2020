@@ -12,11 +12,14 @@ import { device } from "../media-queries"
 
     return (
       <Navigation>
-        <Logo />
+        <Logo alt={siteTitle}/>
         
         <Toggle
           navbarOpen={navbarOpen}
-          onClick={() => setNavbarOpen(!navbarOpen)}
+          onClick={() => {
+            setNavbarOpen(!navbarOpen)
+            // console.log("hey Im here")
+          }}
         >
           {navbarOpen ? <Hamburger open /> : <Hamburger />}
         </Toggle>
@@ -24,6 +27,7 @@ import { device } from "../media-queries"
         {navbarOpen ? (
           <Navbox>
             <NavbarLinks menuLinks={menuLinks} />
+            
           </Navbox>
         ) : (
             <Navbox open>
@@ -53,7 +57,7 @@ import { device } from "../media-queries"
   text-transform:uppercase;
   margin:0px auto;
   padding:0;
-  z-index:22300;
+  z-index:1000;
   align-self:center;
   a {color:#fff;}
   
@@ -82,6 +86,7 @@ const Toggle = styled.div`
   height:100%;
   cursor: pointer;
   padding: 0 10vw;
+  z-index:3000;
 
   @media (max-width:768px) {
     display:flex;

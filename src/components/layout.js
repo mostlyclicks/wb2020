@@ -19,6 +19,8 @@ const Layout = ({ children }) => {
             name
             link
           }
+          description
+          author
         }
       }
     }
@@ -28,9 +30,9 @@ const Layout = ({ children }) => {
     <>
       <div className="site">
         <TopNav />
-        <Header 
+        <Header
           siteTitle={data.site.siteMetadata.title}
-          menuLinks={data.site.siteMetadata.menuLinks}  
+          menuLinks={data.site.siteMetadata.menuLinks}
         />
         <div className="content">{children}</div>
         <Footer />
