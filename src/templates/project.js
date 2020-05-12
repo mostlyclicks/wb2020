@@ -22,7 +22,6 @@ export const query = graphql`
                    body {
                      ... on PRISMIC_ProjectBodyImage {
                        fields {
-                         image 
                          imageSharp {
                            childImageSharp {
                              fluid(quality: 80) {
