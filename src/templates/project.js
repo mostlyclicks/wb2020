@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../components/layout"
-// import Image from 'gatsby-image'
+//// import Image from 'gatsby-image'
 import { device } from "../components/media-queries"
 
 export const query = graphql`
