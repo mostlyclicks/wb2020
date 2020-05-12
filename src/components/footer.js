@@ -82,22 +82,38 @@ const Footer = () => {
 
             <ul className="social-nav">
               <li>
-                <a href="#">
+                <a
+                  href="https://www.facebook.com/wieserbrothersgeneralcontractor/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaFacebook size={28} />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a
+                  href="https://www.linkedin.com/company/wieser-brothers-inc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaLinkedin size={28} />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a
+                  href="https://www.youtube.com/channel/UCPpguLAYPYYh2FMS80KRk9w"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaYoutube size={28} />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a
+                  href="https://www.instagram.com/wieser_brothers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaInstagram size={28} />
                 </a>
               </li>
