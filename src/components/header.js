@@ -1,16 +1,35 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import styled from 'styled-components'
-// import PropTypes from "prop-types"
+//import PropTypes from "prop-types"
 
 import Navbar from "./Navbar/Navbar"
-// import { device } from "./media-queries"
 
-
-const Header = ({ siteTitle, menuLinks }) => (
-  <HeaderWrapper>
-    <Navbar siteTitle={siteTitle} menuLinks={menuLinks} />
-  </HeaderWrapper>
+const Header = () => (
+  <StaticQuery
+    query={graphql`
+      query SiteMetaQuery {
+        site {
+          siteMetadata {
+            title
+            description
+            menuLinks {
+              link
+              name
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <HeaderWrapper>
+        <Navbar 
+          siteTitle={data.site.siteMetadata.title} 
+          menuLinks={data.site.siteMetadata.menuLinks} 
+        />
+      </HeaderWrapper>
+    )}
+  />
 )
 
 // Header.propTypes = {
