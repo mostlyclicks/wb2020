@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `WB 2020 Static`,
+    title: `Wieser Brothers`,
     description: `Wieser Brothers General Contracting | Design/Build, Project management, General Construction.`,
     author: `@gatsbyjs`,
     menuLinks: [
@@ -28,14 +28,6 @@ module.exports = {
         name: "News & Events",
         link: "/news-events",
       },
-      // {
-      //   name: "Employee Login",
-      //   link: "/employee-login",
-      // },
-      // {
-      //   name: "Plan Room",
-      //   link: "/plan-room",
-      // },
     ],
   },
   plugins: [

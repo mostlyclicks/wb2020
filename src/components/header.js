@@ -1,7 +1,7 @@
 import React from "react"
 // import { Link } from "gatsby"
 import styled from 'styled-components'
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 
 import Navbar from "./Navbar/Navbar"
 // import { device } from "./media-queries"
@@ -13,9 +13,9 @@ const Header = ({ siteTitle, menuLinks }) => (
   </HeaderWrapper>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
 
 Header.defaultProps = {
   siteTitle: ``,
