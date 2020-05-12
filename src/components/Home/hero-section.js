@@ -56,17 +56,7 @@ margin-bottom:-4px;
 @media ${device.tablet} {
 }
 `
-const TitleContainer = styled.div`
-  // display:flex;
-  // align-self:center;
-  // justify-content:center;
-  height:80px;
-  width:100%;
-  color:#fff;
-  @media ${device.tablet} {
-  
-  }  
-`
+
 
 const VideoContainer = styled.div`
 video {

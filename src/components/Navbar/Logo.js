@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 // import Img from 'gatsby-image'
 import WBLogo from "../../images/wieser-brothers-logo-w.png"
-import { useStaticQuery, graphql } from 'gatsby'
+//import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from "gatsby"
 
 const LogoWrap = styled.div`
@@ -16,17 +16,17 @@ const LogoWrap = styled.div`
 `
 
 const Logo = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(name: { eq: "wieser-brothers-logo-w" }, extension: { eq: "png" }) {
-        childImageSharp {
-          fixed(width: 120, pngQuality: 60) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     file(name: { eq: "wieser-brothers-logo-w" }, extension: { eq: "png" }) {
+  //       childImageSharp {
+  //         fixed(width: 120, pngQuality: 60) {
+  //           ...GatsbyImageSharpFixed
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
   return (
     <LogoWrap as={Link} to="/">
       <img src={WBLogo} alt="Wieser Brothers Logo" width="160" />

@@ -10,9 +10,7 @@ import { device } from "./media-queries"
 
 const Footer = () => {
   return (
-    
     <FooterSection>
-      
       <FooterWrapper>
         <StyledFooter>
           <div>
@@ -44,9 +42,7 @@ const Footer = () => {
                 <Link to="/contact-us">Contact Us</Link>
               </li>
               <li>
-                <Link to="/firm/careers">
-                  Careers
-                </Link>
+                <Link to="/firm/careers">Careers</Link>
               </li>
               <li>
                 <a href="mailto:bids@wieserbrothers.com">Submit Bids</a>
@@ -57,7 +53,15 @@ const Footer = () => {
               <li>
                 <a href="http://www.wieserbrothers.com/redirects">MSDS</a>
               </li>
-              <li><a href="https://www.employeenavigator.com/benefits/Account/Login" target="_blank">Employee Login</a></li>
+              <li>
+                <a
+                  href="https://www.employeenavigator.com/benefits/Account/Login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Employee Login
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -84,17 +88,17 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#">
-                  <FaLinkedin size={28}  />
+                  <FaLinkedin size={28} />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FaYoutube size={28}  />
+                  <FaYoutube size={28} />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <FaInstagram size={28}  />
+                  <FaInstagram size={28} />
                 </a>
               </li>
             </ul>

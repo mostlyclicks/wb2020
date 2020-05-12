@@ -5,9 +5,9 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import HomeGrid from "../components/Home/grid-container"
 import HeroSection from "../components/Home/hero-section"
-import block1 from '../images/1JeffBrian2017.jpeg'
+//import block1 from '../images/1JeffBrian2017.jpeg'
 import HeroBG from "../images/hero_8918-bg3.jpg"
-import { device } from "../components/media-queries"
+//import { device } from "../components/media-queries"
 import Mission from "../components/mission"
 
 

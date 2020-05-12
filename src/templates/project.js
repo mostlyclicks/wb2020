@@ -121,11 +121,11 @@ const MainDiv = styled.div`
 
   div:nth-child(1) {
       // border-top:3px solid var(--orange);
-      
+      display:inline-grid;
       color:var(--orange);
       // background-color: var(--darkGray);
       background-color:black;
-      // order:1;
+    // order:1;
       padding:1rem;
       width:100%;
       padding-top:150px;

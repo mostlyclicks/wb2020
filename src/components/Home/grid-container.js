@@ -85,19 +85,6 @@ const GridContainer = styled.section`
   }
 `
 
-const GridContainerWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 2fr;
-  grid-gap: 0px;
-  margin: 50px auto;
-  padding: 20px;
-  @media ${device.tablet} {
-    grid-template-columns:1fr 1fr; 
-    max-width:991px;
-    margin:50px auto;
-    grid-gap:20px;
-  }
-`
 const GridItem = styled.div`
   background-color: rgba(0, 0, 0, 0.25);
   height: 400px;

@@ -1,10 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import styled from 'styled-components'
 import PropTypes from "prop-types"
 
 import Navbar from "./Navbar/Navbar"
-import { device } from "./media-queries"
+// import { device } from "./media-queries"
 
 
 const Header = ({ siteTitle, menuLinks }) => (

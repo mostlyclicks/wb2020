@@ -1,10 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { device } from "../media-queries"
-
-
-
 
 const NavbarLinks = ({ menuLinks }) => (
   <>
@@ -16,8 +12,6 @@ const NavbarLinks = ({ menuLinks }) => (
 )
 
 export default NavbarLinks
-
-
 
 const NavItem = styled(Link)`
  font-family:'Open Sans';

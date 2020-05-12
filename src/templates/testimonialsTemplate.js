@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { RichText } from "prismic-reactjs"
-import styled from "styled-components"
+//import styled from "styled-components"
 
 const Testimonials = ( {data} ) => {
 
