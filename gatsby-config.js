@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Wieser Brothers`,
     description: `Wieser Brothers General Contracting | Design/Build, Project management, General Construction.`,
-    author: `@gatsbyjs`,
+    author: `mostlyClicks`,
     menuLinks: [
       {
         name: "Home",
