@@ -7,37 +7,39 @@ import Layout from "../components/layout"
 import { device } from "../components/media-queries"
 
 export const query = graphql`
-         query ProjectQuery($uid: String) {
-           prismic {
-             allProjects(uid: $uid) {
-               edges {
-                 node {
-                   _meta {
-                     uid
-                     id
-                   }
-                   title
-                   location
-                   long_description
-                   body {
-                     ... on PRISMIC_ProjectBodyImage {
-                       fields {
-                         imageSharp {
-                           childImageSharp {
-                             fluid(quality: 80) {
-                               srcWebp
-                             }
-                           }
-                         }
-                       }
-                     }
-                   }
-                 }
-               }
-             }
-           }
-         }
-       `
+  query ProjectQuery($uid: String) {
+    prismic {
+      allProjects(uid: $uid) {
+        edges {
+          node {
+            _meta {
+              uid
+            }
+            title
+            location
+            long_description
+            body {
+              ... on PRISMIC_ProjectBodyImage {
+                type
+                label
+                fields {
+                  image
+                  imageSharp {
+                    childImageSharp {
+                      fluid {
+                        srcWebp
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 const Project = ({ data }) => {
   
