@@ -20,9 +20,7 @@ const TopNav = () => {
         <li>
           <Link to="/">Info</Link>
         </li>
-        <li>
-          <a href="/msds">MSDS</a>
-        </li>
+       
         <li>
           <Link to="/contact-us">Contact Us</Link>
         </li>
@@ -36,7 +34,9 @@ const TopNav = () => {
 
 export default TopNav
 
-
+ // <li>
+//   <a href="/msds">MSDS</a>
+// </li>
 
 // STYLES ––––––––––––––––––––––––– //
 

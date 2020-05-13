@@ -37,7 +37,7 @@ const Careers = ( {data} ) => {
            <h3>Current Openings</h3>
            <EmpOps />
            <p>
-              <a href={workApp} title="Wieser Brothers Job Application   Fillable Form 12 21 19" class="btn btn-primary">Job Application 2020 PDF</a>
+              <a href={workApp} title="Wieser Brothers Job Application   Fillable Form 12 21 19" class="btn btn-primary">Click here to Apply</a>
             </p>
             <p>Wieser Brothers General Contractor, Inc. is a well-recognized and highly-respected construction company in La Crescent, MN (just minutes away from La Crosse, WI). We credit our dedicated team of employees for 25 plus years of success and are committed to strong core values that are reinforced in everything that we do. If you are interested in joining an organization that rewards individual initiative and promotes career development through life-long learning, please contact Wieser Brothers.</p>
             <p>Wieser Brothers General Contractor, Inc. offers competitive wages based on education and work experience. We also offer a highly competitive benefits program that includes a 401(k) plan, profit sharing, health and dental insurance, short term and long term disability insurance, paid time off (PTO) and holiday pay.</p>
