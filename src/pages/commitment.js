@@ -1,6 +1,6 @@
 import React from 'react'
 import L2PagesLayout from "../components/l2-page-template"
-import bgImage from "../images/IMG_2273_employment_page-web.jpeg"
+import bgImage from "../images/WieserBrothers-commitment-DJI_0770.jpg"
 
 
 const OurCommitment = () => (
