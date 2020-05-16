@@ -35,6 +35,16 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-plugin-modal-routing`,
+      options: {
+        appElement: '#___gatsby',
+        modalProps: {
+          closeTimeoutMS: 500
+        },
+      }
+    },
+    
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

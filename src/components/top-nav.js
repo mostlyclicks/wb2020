@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from "styled-components"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
+import { Link } from "gatsby-plugin-modal-routing"
+
 
 import { device } from "./media-queries"
 
@@ -11,6 +13,12 @@ const TopNav = () => {
   return (
     <StyledTopNav>
       <ul>
+        <li>
+          <Link to="/modal/covid/" asModal style={{
+            color:'#fe9314',
+            fontWeight:'bold'
+          }}>COVID-19 UPDATE</Link>
+        </li>
         <li>
           <Link to="/firm/careers">Careers</Link>
         </li>
