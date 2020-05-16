@@ -77,12 +77,13 @@ a {
   
 }
 
-.ReactModal__Content--after-open > h1, p {
+.ReactModal__Content--after-open h1 {
   color:#fff !important;
-  
-
-  
 }
+.ReactModal__Content--after-open p {
+  color:#fff !important;
+}
+
 
 .ReactModal__Content--after-open > h1 {
   display:block;

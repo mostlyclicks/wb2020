@@ -25,10 +25,14 @@ const NewsEvents = ( {data} ) => {
         <NewsList>
         {newsEvents.map(article => {
           return (
+            
+            <Link to={`/news-events/${article.node._meta.uid}`}>
             <ArticleItem>
-              <h3><Link to={`/news-events/${article.node._meta.uid}`}>{RichText.asText(article.node.title)}</Link></h3>
+              <h3>{RichText.asText(article.node.title)}</h3>
               <img src={article.node.thumbnail.url} alt={article.node.thumbnail.alt} />
             </ArticleItem>
+            </Link>
+            
           )
         })}
         </NewsList>
@@ -147,38 +151,42 @@ const L2Navigation = styled.aside`
 `
 
 const ArticleItem = styled.div`
-  margin:20px 20px 20px 20px;
-    display:flex;
-    flex-direction:row;
-    border-bottom:1px solid #ededed;
-    padding:0px 0 20px 0;
-    h3 {
-      font-family:'IBM Plex Serif';
-      display:flex;
-      justify-content:flex-end;
-      order:2;
-      align-self:center;
-      padding-left:1rem;
-      a {
-        color:var(--darkGray);
-        text-decoration:none;
-        padding:1rem;
-        &:hover {
-          color:var(--orange);
-          transition:.5s;
-          background-color:var(--darkGray);
-          border-bottom:3px solid var(--orange);
-          margin-bottom:-3px;
-        }
+  margin: 40px 20px 80px 20px;
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+
+  padding: 0px 0 20px 0;
+  h3 {
+    font-family: "IBM Plex Serif";
+    display: flex;
+    justify-content: flex-end;
+    order: 2;
+    align-self: center;
+    padding-left: 1rem;
+    a {
+      color: var(--darkGray);
+      text-decoration: none;
+      padding: 1rem;
+      &:hover {
+        color: var(--orange);
+        transition: 0.5s;
+        background-color: var(--darkGray);
+        border-bottom: 3px solid var(--orange);
+        margin-bottom: -3px;
       }
     }
-    img {
-      display:flex;
-      justify-content:flex-start;
-      height:150px;
-      width:150px;
-      object-fit:cover;
-      border:1px solid #cdcdcd;
-      order:1;
-    }
+  }
+  img {
+    display: flex;
+    justify-content: flex-start;
+    height: 160px;
+    width: 250px;
+    object-fit: cover;
+    border: 1px solid #cdcdcd;
+    order: 1;
+    margin: -30px 0px 0 30px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+  }
 `
