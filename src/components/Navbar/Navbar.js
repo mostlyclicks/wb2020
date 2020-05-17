@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import NavbarLinks from "./NavbarLinks"
 import Logo from './Logo'
 import { device } from "../media-queries"
+import BGImg from '../../images/slants2.png'
 
 
 
@@ -18,7 +19,6 @@ import { device } from "../media-queries"
           navbarOpen={navbarOpen}
           onClick={() => {
             setNavbarOpen(!navbarOpen)
-            // console.log("hey Im here")
           }}
         >
           {navbarOpen ? <Hamburger open /> : <Hamburger />}
@@ -41,46 +41,44 @@ import { device } from "../media-queries"
   export default Navbar
 
   const Navigation = styled.nav`
-  font-family:'Open Sans';
-  font-weight:400;
-  height:80px;
-  display:flex;
-  
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00573c+0,00573c+72,00573c+100&1+0,0+90,0+100 */
-  background: -moz-linear-gradient(top,  rgba(0,87,60,1) 0%, rgba(0,87,60,0.2) 72%, rgba(0,87,60,0) 90%, rgba(0,87,60,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(0,87,60,1) 0%,rgba(0,87,60,0.2) 72%,rgba(0,87,60,0) 90%,rgba(0,87,60,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(0,87,60,1) 0%,rgba(0,87,60,0.2) 72%,rgba(0,87,60,0) 90%,rgba(0,87,60,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00573c', endColorstr='#0000573c',GradientType=0 ); /* IE6-9 */
+    font-family: "Open Sans";
+    font-weight: 400;
+    height: 100px;
+    display: flex;
+    background-image: url(${BGImg});
+    background-position-y: -100px;
+    background-position-x: -60px;
 
-  position:relative;
-  justify-content:space-between;
-  text-transform:uppercase;
-  margin:0px auto;
-  padding:0;
-  z-index:1000;
-  align-self:center;
-  a {color:#fff;}
-  
-  @media ${device.tablet} {
-    // max-width: 768px;
-    margin:0px auto;
-    height:140px;
-    justify-content:flex-start;
-    font-size:12px;
-    margin-right:3rem;
-    width:100%;
-    clip-path:polygon(0% 0%, 100% 0%, 100% 50%, 0% 100%);
-  }
-  @media ${device.laptop} {
-    // max-width: 960px;    
-    clip-path:polygon(3% 0%, 100% 0%, 97% 40%, 10% 100%);
-    justify-content:space-around;
-    font-size:14px;
-  }
-  @media ${device.laptopL} {
-    // max-width: 1200px;
-  }
-`
+    position: relative;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin: 0px auto;
+    padding: 0;
+    z-index: 1000;
+    align-self: center;
+    a {
+      color: #fff;
+    }
+
+    @media ${device.tablet} {
+      // max-width: 768px;
+      margin: 0px auto;
+      height: 200px;
+      justify-content: flex-start;
+      font-size: 12px;
+      margin-right: 3rem;
+      width: 100%;
+      
+    }
+    @media ${device.laptop} {
+      // max-width: 960px;
+      justify-content: space-around;
+      font-size: 14px;
+    }
+    @media ${device.laptopL} {
+      // max-width: 1200px;
+    }
+  `
 const Toggle = styled.div`
   display:none;
   height:100%;

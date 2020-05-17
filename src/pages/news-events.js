@@ -76,12 +76,12 @@ const L2MainImage = styled.section`
   display:flex;
   justify-content:flex-start;
   align-items:flex-end;
-  height:300px;
+  height:500px;
   width:100%;
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  margin-top:-140px;
+  margin-top:-200px;
 `
 
 const L2Title = styled.div`

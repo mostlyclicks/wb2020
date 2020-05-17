@@ -114,7 +114,7 @@ const L2MainImage = styled.div`
   @media ${device.tablet} {
     height:400px;
     background-position-y:-120px;
-    margin-top:-140px;
+    margin-top:-200px;
   }
   @media ${device.laptop} {
     height:550px;
