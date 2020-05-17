@@ -1,10 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-// import { Link } from "gatsby-plugin-modal-routing"
 import ConditionalLayout from "../../components/ConditionalLayout"
 import Logo from "../../components/Navbar/Logo"
-import { isBlock } from 'typescript'
-
 
 const CovidPage = () => (
   <ConditionalLayout>
@@ -26,8 +22,3 @@ const CovidPage = () => (
 )
 
 export default CovidPage
-
-const ModalPopup = styled.div`
- 
-
-`

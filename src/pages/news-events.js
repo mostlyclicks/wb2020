@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Moment from "react-moment"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -13,6 +14,8 @@ const NewsEvents = ( {data} ) => {
 
   const newsEvents = data.prismic.allNews_and_eventss.edges
 
+    
+
   return (
     <Layout>
     <NewsWrapper>
@@ -23,18 +26,28 @@ const NewsEvents = ( {data} ) => {
       </L2MainImage>
       <MainContent>
         <NewsList>
-        {newsEvents.map(article => {
-          return (
-            
-            <Link to={`/news-events/${article.node._meta.uid}`}>
-            <ArticleItem>
-              <h3>{RichText.asText(article.node.title)}</h3>
-              <img src={article.node.thumbnail.url} alt={article.node.thumbnail.alt} />
-            </ArticleItem>
-            </Link>
-            
-          )
-        })}
+          {newsEvents.map(article => {
+            return (
+              <Item>
+                <Link to={`/news-events/${article.node._meta.uid}`}>
+                  <ItemImg
+                    style={{
+                      backgroundImage:
+                        "url(" + article.node.thumbnail.url + ")"
+                    }}
+                  ></ItemImg>
+                  <ItemArticle>
+                    <small>
+                      <Moment format="MMMM D, YYYY">
+                        {article.node.date_published}
+                      </Moment>
+                    </small>
+                    <h3>{RichText.asText(article.node.title)}</h3>
+                  </ItemArticle>
+                </Link>
+              </Item>
+            )
+          })}
         </NewsList>
         <L2Navigation>
           <SideBarAddress />
@@ -51,21 +64,22 @@ export default NewsEvents
 // get list of all news-events
 
 export const query = graphql`
-{
-  prismic {
-    allNews_and_eventss {
-      edges {
-        node {
-          title
-          _meta {
-            uid
+  {
+    prismic {
+      allNews_and_eventss(sortBy: date_published_DESC) {
+        edges {
+          node {
+            title
+            _meta {
+              uid
+            }
+            thumbnail
+            date_published
           }
-          thumbnail
         }
       }
     }
   }
-}
 `
 
 const NewsWrapper = styled.div`
@@ -133,60 +147,77 @@ const MainContent = styled.section`
 `
 
 const NewsList = styled.div`
-    
-    @media ${device.tablet} {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
 
-      max-width:768px;
-    } 
-    @media ${device.laptop} {
-      max-width:960px;
-    }
-    @media ${device.laptopL} {
-      max-width:1200px;
-    } 
+
+  @media ${device.tablet} {
+    max-width: 768px;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 20px;
+  }
+  @media ${device.laptop} {
+    max-width: 960px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media ${device.laptopL} {
+    max-width: 1200px;
+  }
 `
 
 const L2Navigation = styled.aside`
 
 `
 
-const ArticleItem = styled.div`
-  margin: 40px 20px 80px 20px;
-  background-color: #f3f3f3;
+const Item = styled.div`
   display: flex;
-  flex-direction: row;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
-
-  padding: 0px 0 20px 0;
-  h3 {
-    font-family: "IBM Plex Serif";
-    display: flex;
-    justify-content: flex-end;
-    order: 2;
-    align-self: center;
-    padding-left: 1rem;
-    a {
-      color: var(--darkGray);
-      text-decoration: none;
-      padding: 1rem;
-      &:hover {
-        color: var(--orange);
-        transition: 0.5s;
-        background-color: var(--darkGray);
-        border-bottom: 3px solid var(--orange);
-        margin-bottom: -3px;
-      }
-    }
+  background-color: #f3f3f3;
+  a {
+    text-decoration: none;
   }
-  img {
+  &:hover {
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  }
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease-in;
+  @media {device.tablet} {
+    // max-height:400px;
+  }
+`
+
+const ItemArticle = styled.article`
+  
+    padding: 20px;
+    flex: 1;
+
     display: flex;
-    justify-content: flex-start;
-    height: 160px;
-    width: 250px;
-    object-fit: cover;
-    border: 1px solid #cdcdcd;
-    order: 1;
-    margin: -30px 0px 0 30px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    justify-content: space-between;
+  
+  h3 {
+    font-family:'IBM Plex Serif';
+    flex:1;
+  }
+  h5 {
+    justify-content:flex-end;
+  }
+`
+
+const ItemImg = styled.div`
+  padding-bottom: 90%;
+  background-size: cover;
+  background-position: center center;
+  @media {device.tablet} {
+    padding-bottom:50%;
+    
   }
 `
