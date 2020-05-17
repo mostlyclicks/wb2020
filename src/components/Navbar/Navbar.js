@@ -46,9 +46,8 @@ import BGImg from '../../images/slants2.png'
     height: 100px;
     display: flex;
     background-image: url(${BGImg});
-    background-position-y: -100px;
+    background-position-y: -200px;
     background-position-x: -60px;
-
     position: relative;
     justify-content: space-between;
     text-transform: uppercase;
@@ -68,15 +67,19 @@ import BGImg from '../../images/slants2.png'
       font-size: 12px;
       margin-right: 3rem;
       width: 100%;
-      
+      background-position-y: -150px;
+      background-position-x: -80px;
     }
     @media ${device.laptop} {
       // max-width: 960px;
       justify-content: space-around;
       font-size: 14px;
+      background-position-y: -120px;
+      background-position-x: -80px;
     }
     @media ${device.laptopL} {
       // max-width: 1200px;
+      background-position-y: -100px;
     }
   `
 const Toggle = styled.div`
