@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 import { device } from "../media-queries"
-import gridBackground from '../../images/hero_8918_background.jpg'
+// import gridBackground from '../../images/hero_8918_background.jpg'
 import block2 from "../../images/1JeffBrian2017.jpeg"
 import block3 from "../../images/JPEG-image-1.jpg"
 import block4 from "../../images/DJI_0317.jpg"
@@ -55,7 +55,7 @@ const GridSection = styled.section`
   padding-top:0px;
   padding-bottom:0px;  
   width: 100%;
-  background-image:url(${gridBackground});
+
   background-position-y:50%;
   background-size:100%;
   background-repeat:no-repeat;
@@ -63,6 +63,8 @@ const GridSection = styled.section`
   @media ${device.tablet} {
     padding-top:40px;
     padding-bottom:40px;
+    // border-top:1px solid red;
+    margin-top:-100px;
   }
 `
 const GridContainer = styled.section`
