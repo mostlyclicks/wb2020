@@ -10,6 +10,7 @@ const Testimonials = ( {data} ) => {
   return (
     <>
       <h1>{RichText.asText(testimonialData.node.title)}</h1>
+      <blockquote>{RichText.render(testimonialData.node.testimonial_text)}</blockquote>
     </>
   )
 }
@@ -31,4 +32,3 @@ export const query = graphql`
     }
   }
 `
-
