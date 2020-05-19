@@ -1,6 +1,7 @@
 import React from 'react'
 import ConditionalLayout from "../../components/ConditionalLayout"
 import Logo from "../../components/Navbar/Logo"
+import styled from "styled-components"
 
 const CovidPage = () => (
   <ConditionalLayout>
