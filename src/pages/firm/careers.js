@@ -81,7 +81,7 @@ export const query = graphql`
 `
 const ContentWrapper = styled.div`
   
-  margin-top:-140px;
+  margin-top:-200px;
   
 `
 
@@ -95,7 +95,7 @@ padding:1.5rem;
  
   @media ${device.tablet} {
     margin:0 auto;
-    // border:1px solid green;
+    
     max-width:768px;
     grid-template-columns:2fr 1fr;
   }

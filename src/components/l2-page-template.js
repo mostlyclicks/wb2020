@@ -1,9 +1,11 @@
 import React from 'react'
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "./layout"
 import { device } from "./media-queries"
 import MainSubnav from "./Subnavs/main-subnav"
 import SideBarAddress from "./Subnavs/address-sidebar"
+import RandomTestimonial from "./testimonials"
 
 const L2PagesLayout = props => (
   <Layout>
@@ -24,6 +26,8 @@ const L2PagesLayout = props => (
         <L2Navigation>
           <MainSubnav subnav={props.subnav} />
           <SideBarAddress />
+          <RandomTestimonial />
+          
         </L2Navigation>
       </Content>
     </ContentWrapper>
@@ -31,6 +35,20 @@ const L2PagesLayout = props => (
 )
 
 export default L2PagesLayout
+
+export const TestimonialQuery = graphql`
+{
+  prismic {
+    allTestimonials {
+      edges {
+        node {
+          title
+        }
+      }
+    }
+  }
+}
+`
 
 
 const ContentWrapper = styled.div`
