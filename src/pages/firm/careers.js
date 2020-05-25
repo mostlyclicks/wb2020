@@ -5,7 +5,8 @@ import styled from "styled-components"
 import Layout from "../../components/layout"
 import { device } from "../../components/media-queries"
 import MainSubnav from "../../components/Subnavs/main-subnav"
-import SideBarAddress from "../../components/Subnavs/address-sidebar"
+// import RandomTestimonial from "./testimonials"
+// import SideBarAddress from "../../components/Subnavs/address-sidebar"
 
 import bgImage from "../../images/wieser-brothers-employment.jpg"
 import workApp from "../../images/WB-Job-Application-Fillable-Form-12-21-19.pdf"
@@ -23,10 +24,12 @@ const Careers = ( {data} ) => {
 
  return (
    <Layout>
-   <ContentWrapper>
-       <L2MainImage style={{
-         backgroundImage: 'url(' + bgImage + ')'
-       }}>
+     <ContentWrapper>
+       <L2MainImage
+         style={{
+           backgroundImage: "url(" + bgImage + ")",
+         }}
+       >
          <L2Title>
            <h1>Careers</h1>
          </L2Title>
@@ -37,24 +40,58 @@ const Careers = ( {data} ) => {
            <h3>Current Openings</h3>
            <EmpOps />
            <p>
-              <a href={workApp} title="Wieser Brothers Job Application   Fillable Form 12 21 19" class="btn btn-primary">Click here to Apply</a>
-            </p>
-            <p>Wieser Brothers General Contractor, Inc. is a well-recognized and highly-respected construction company in La Crescent, MN (just minutes away from La Crosse, WI). We credit our dedicated team of employees for 25 plus years of success and are committed to strong core values that are reinforced in everything that we do. If you are interested in joining an organization that rewards individual initiative and promotes career development through life-long learning, please contact Wieser Brothers.</p>
-            <p>Wieser Brothers General Contractor, Inc. offers competitive wages based on education and work experience. We also offer a highly competitive benefits program that includes a 401(k) plan, profit sharing, health and dental insurance, short term and long term disability insurance, paid time off (PTO) and holiday pay.</p>
-            <p>  Wieser Brothers General Contractor, Inc. is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to status as a protected veteran or a qualified individual with a disability, or other protected status, such as race, religion, color, national origin, sex, age. </p>
-                    <p>EOE and Drug-Free Workplace </p>
-                        <p><a href="mailto:careers@wieserbrothers.com" title="careers@wieserbrothers.com">careers@wieserbrothers.com</a>
-            <a href="/our-firm/employment-opportunities/safety-director" title="Safety Director"></a>
-            </p>   
+             <a
+               href={workApp}
+               title="Wieser Brothers Job Application   Fillable Form 12 21 19"
+               class="btn btn-primary"
+             >
+               Click here to Apply
+             </a>
+           </p>
+           <p>
+             Wieser Brothers General Contractor, Inc. is a well-recognized and
+             highly-respected construction company in La Crescent, MN (just
+             minutes away from La Crosse, WI). We credit our dedicated team of
+             employees for 25 plus years of success and are committed to strong
+             core values that are reinforced in everything that we do. If you
+             are interested in joining an organization that rewards individual
+             initiative and promotes career development through life-long
+             learning, please contact Wieser Brothers.
+           </p>
+           <p>
+             Wieser Brothers General Contractor, Inc. offers competitive wages
+             based on education and work experience. We also offer a highly
+             competitive benefits program that includes a 401(k) plan, profit
+             sharing, health and dental insurance, short term and long term
+             disability insurance, paid time off (PTO) and holiday pay.
+           </p>
+           <p>
+               Wieser Brothers General Contractor, Inc. is an equal opportunity
+             employer. All qualified applicants will receive consideration for
+             employment without regard to status as a protected veteran or a
+             qualified individual with a disability, or other protected status,
+             such as race, religion, color, national origin, sex, age. 
+           </p>
+           <p>EOE and Drug-Free Workplace </p>
+           <p>
+             <a
+               href="mailto:careers@wieserbrothers.com"
+               title="careers@wieserbrothers.com"
+             >
+               careers@wieserbrothers.com
+             </a>
+             <a
+               href="/our-firm/employment-opportunities/safety-director"
+               title="Safety Director"
+             ></a>
+           </p>
          </MainContent>
          <L2Navigation>
            <MainSubnav subnav="firm" />
-           <SideBarAddress />
+          
          </L2Navigation>
        </Content>
-   </ContentWrapper>
-
-   
+     </ContentWrapper>
    </Layout>
  )
 
