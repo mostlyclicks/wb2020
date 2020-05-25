@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
+import { device } from "./media-queries"
 
 const RandomTestimonial = () => {
 
@@ -99,8 +100,15 @@ const StyledBlockquote = styled.blockquote`
     position: relative;
     left: -4.5rem;
     top: -2.5rem;
-    width: 145%;
+    width: 120%;
     font-family: "Open Sans";
     font-weight: 400;
   }
+
+  @media ${device.tablet} {
+    p {
+      width:150%;
+    }
+  }
+
 `
