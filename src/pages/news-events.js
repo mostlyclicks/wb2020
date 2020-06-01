@@ -5,8 +5,9 @@ import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import { device } from "../components/media-queries"
-import SideBarAddress from "../components/Subnavs/address-sidebar"
-import bgImg from "../images/BuildingAerial.jpg"
+// import SideBarAddress from "../components/Subnavs/address-sidebar"
+import bgImg from "../images/news-events-header.jpg"
+import bgImg2 from "../images/trust-partnership-excellence.png"
 
 
 
@@ -50,7 +51,7 @@ const NewsEvents = ( {data} ) => {
           })}
         </NewsList>
         <L2Navigation>
-          <SideBarAddress />
+          
         </L2Navigation>
       </MainContent>
       </NewsWrapper>
@@ -83,6 +84,12 @@ export const query = graphql`
 `
 
 const NewsWrapper = styled.div`
+  
+  background-image:url(${bgImg2});
+  background-repeat:no-repeat;
+  background-position-x:100%;
+  background-position-y:500px;
+  background-size:40%;
 
 `
 const L2MainImage = styled.section`
@@ -133,6 +140,9 @@ const MainContent = styled.section`
     margin:80px auto;
     display:grid;
     grid-template-columns:1fr;
+
+    
+
     @media ${device.tablet} {
       grid-template-columns:2fr 1fr;
       max-width:768px;

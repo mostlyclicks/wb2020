@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 import { device } from "../media-queries"
 // import gridBackground from '../../images/hero_8918_background.jpg'
-import block2 from "../../images/1JeffBrian2017.jpeg"
+import block2 from "../../images/Group-Photo-2.jpg"
 import block3 from "../../images/JPEG-image-1.jpg"
 import block4 from "../../images/DJI_0317.jpg"
 
@@ -158,7 +158,7 @@ const GridItem = styled.div`
   }
   @media ${device.laptopL} {
     :nth-child(1) {
-      background-position-x:0;
+      background-position-x:-50px;
     }
   }
 `

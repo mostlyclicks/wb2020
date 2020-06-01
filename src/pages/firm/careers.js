@@ -6,9 +6,10 @@ import Layout from "../../components/layout"
 import { device } from "../../components/media-queries"
 import MainSubnav from "../../components/Subnavs/main-subnav"
 // import RandomTestimonial from "./testimonials"
-// import SideBarAddress from "../../components/Subnavs/address-sidebar"
+// import SideBarddress from "../../components/Subnavs/address-sidebar"
 
 import bgImage from "../../images/wieser-brothers-employment.jpg"
+import bgImg from "../../images/trust-partnership-excellence.png"
 import workApp from "../../images/WB-Job-Application-Fillable-Form-12-21-19.pdf"
 
 
@@ -66,7 +67,7 @@ const Careers = ( {data} ) => {
              disability insurance, paid time off (PTO) and holiday pay.
            </p>
            <p>
-               Wieser Brothers General Contractor, Inc. is an equal opportunity
+             Wieser Brothers General Contractor, Inc. is an equal opportunity
              employer. All qualified applicants will receive consideration for
              employment without regard to status as a protected veteran or a
              qualified individual with a disability, or other protected status,
@@ -126,6 +127,12 @@ const Content = styled.section`
 display:grid;
 grid-template-columns:1fr;
 grid-gap:20px;
+
+ background-image:url(${bgImg});
+ background-repeat:no-repeat;
+ background-position-x:100%;
+ background-position-y:0px;
+ background-size:35%;
 
 
 padding:1.5rem;

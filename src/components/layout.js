@@ -4,18 +4,23 @@ import Header from "./header"
 import "./layout.css"
 import TopNav from "./top-nav"
 import Footer from "./footer"
-// import favicon from '../images/wieserbrothers-icon.png'
+import styled from "styled-components"
+
 // import Helmet from 'react-helmet'
    
 
 const Layout = ({ children }) => {
+
+  console.log(window.location.pathname)
+
   return (
     <>
       
       <div className="site">
         <TopNav />
         <Header />
-        <div className="content">{children}</div>
+        <ContentDiv>{children}</ContentDiv>
+        
         <Footer />
       </div>
     </>
@@ -27,3 +32,8 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const ContentDiv = styled.div`
+
+
+`

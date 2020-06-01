@@ -4,13 +4,14 @@ import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import { device } from "../components/media-queries"
-import SideBarAddress from "../components/Subnavs/address-sidebar"
-import bgImg from "../images/DJI_0317.jpg"
+import bgImg from "../images/DJI_0027.jpg"
+import bgImg2 from "../images/trust-partnership-excellence.png"
 
 
 const Projects = ( {data} ) => {
 
   const projects = data.prismic.allProjects.edges
+  console.log(projects)
 
   return (
     <Layout>
@@ -48,7 +49,7 @@ const Projects = ( {data} ) => {
             </ProjectList>
 
           <L2Navigation>
-            <SideBarAddress />
+            
           </L2Navigation>
 
         </MainContent>
@@ -67,7 +68,7 @@ export default Projects
 export const query = graphql`
          {
            prismic {
-             allProjects(sortBy: meta_firstPublicationDate_DESC) {
+             allProjects(sortBy: meta_firstPublicationDate_DESC, first: 13) {
                edges {
                  node {
                    title
@@ -90,6 +91,11 @@ export const query = graphql`
        `
 
 const ProjectWrapper = styled.section`
+  background-image:url(${bgImg2});
+  background-repeat:no-repeat;
+  background-position-x:100%;
+  background-position-y:500px;
+  background-size:40%;
 
 `
 

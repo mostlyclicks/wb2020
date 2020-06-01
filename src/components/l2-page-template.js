@@ -6,6 +6,7 @@ import { device } from "./media-queries"
 import MainSubnav from "./Subnavs/main-subnav"
 // import SideBarAddress from "./Subnavs/address-sidebar"
 import RandomTestimonial from "./testimonials"
+import bgImg from "../images/trust-partnership-excellence.png"
 
 const L2PagesLayout = props => (
   <Layout>
@@ -52,7 +53,8 @@ export const TestimonialQuery = graphql`
 
 
 const ContentWrapper = styled.div`
-  // border:1px solid red;
+
+
   
 `
 
@@ -61,6 +63,13 @@ display:grid;
 grid-template-columns:1fr;
 grid-gap:20px;
 padding:1.5rem;
+
+ background-image:url(${bgImg});
+ background-repeat:no-repeat;
+ background-position-x:100%;
+ background-position-y:0px;
+ background-size:35%;
+
  
   @media ${device.tablet} {
     margin:0 auto;
