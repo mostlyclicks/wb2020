@@ -20,9 +20,7 @@ const Projects = ( {data} ) => {
             <h1>Projects</h1>
           </L2Title>
         </L2MainImage>
-    
         <MainContent>
-            
             <ProjectList>
               {projects.map(project => {
                 return (
@@ -46,28 +44,21 @@ const Projects = ( {data} ) => {
                 )
               })}
             </ProjectList>
-
           <L2Navigation>
             
           </L2Navigation>
-
         </MainContent>
-
-        
-          
       </ProjectWrapper>
     </Layout>
   )
-
 }
 
 export default Projects
 
-
 export const query = graphql`
          {
            prismic {
-             allProjects(sortBy: meta_firstPublicationDate_DESC, first: 13) {
+             allProjects(sortBy: meta_firstPublicationDate_DESC, first: 12) {
                edges {
                  node {
                    title
@@ -95,7 +86,6 @@ const ProjectWrapper = styled.section`
   background-position-x:100%;
   background-position-y:500px;
   background-size:40%;
-
 `
 
 const L2MainImage = styled.div`
