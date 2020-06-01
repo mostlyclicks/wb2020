@@ -5,7 +5,7 @@ import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import { device } from "../components/media-queries"
-// import SideBarAddress from "../components/Subnavs/address-sidebar"
+import RandomTestimonial from "../components/testimonials"
 import bgImg from "../images/news-events-header.jpg"
 import bgImg2 from "../images/trust-partnership-excellence.png"
 
@@ -49,7 +49,7 @@ const NewsEvents = ( {data} ) => {
           })}
         </NewsList>
         <L2Navigation>
-          
+          <RandomTestimonial />
         </L2Navigation>
       </MainContent>
       </NewsWrapper>

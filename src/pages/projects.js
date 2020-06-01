@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
 import Layout from "../components/layout"
+import RandomTestimonial from "../components/testimonials"
 import { device } from "../components/media-queries"
 import bgImg from "../images/DJI_0027.jpg"
 import bgImg2 from "../images/trust-partnership-excellence.png"
@@ -45,7 +46,7 @@ const Projects = ( {data} ) => {
               })}
             </ProjectList>
           <L2Navigation>
-            
+            <RandomTestimonial />
           </L2Navigation>
         </MainContent>
       </ProjectWrapper>
