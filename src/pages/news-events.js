@@ -176,7 +176,7 @@ const NewsList = styled.div`
 `
 
 const L2Navigation = styled.aside`
-
+  padding-top:120px;
 `
 
 const Item = styled.div`
