@@ -57,7 +57,8 @@ const Footer = () => {
                 <a href="mailto:info@wieserbrothers.com">Info</a>
               </li>
               <li>
-                <a href="http://www.wieserbrothers.com/redirects">MSDS</a>
+                <a href="https://msdsmanagement.msdsonline.com/0e7c89d7-0615-4059-8eec-baa966b2c76e/ebinder/?nas=True" target="_blank"
+                  rel="noopener noreferrer">MSDS</a>
               </li>
               <li>
                 <a
