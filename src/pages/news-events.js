@@ -15,8 +15,6 @@ const NewsEvents = ( {data} ) => {
 
   const newsEvents = data.prismic.allNews_and_eventss.edges
 
-    
-
   return (
     <Layout>
     <NewsWrapper>

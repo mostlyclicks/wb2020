@@ -11,8 +11,6 @@ import styled from "styled-components"
 
 const Layout = ({ children }) => {
 
-  console.log(window.location.pathname)
-
   return (
     <>
       

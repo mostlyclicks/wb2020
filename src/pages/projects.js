@@ -11,7 +11,6 @@ import bgImg2 from "../images/trust-partnership-excellence.png"
 const Projects = ( {data} ) => {
 
   const projects = data.prismic.allProjects.edges
-  console.log(projects)
 
   return (
     <Layout>
