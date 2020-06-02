@@ -21,9 +21,9 @@ const OurCommitment = () => (
         </p>
         <p>Clients place their trust in Wieser Brothers for exceptional performance and craftsmanship. The advantage of working with us doesn't stop there.</p>
         <ul>
-        <li>Wieser Brothers attention to federal and state safety standards is a matter of policy and practice, resulting in and exemplary safety record within the construction industry.</li>
+        <li>Wieser Brothers attention to federal and state safety standards is a matter of policy and practice, resulting in an exemplary safety record within the construction industry.</li>
         <li>As a member of the U.S. Green Building Council, Wieser Brothers promotes awareness of the latest sustainable building techniques and principles, particularly those that are competitive with conventional counterparts. Our team includes an experienced LEED Accredited Professional who can help environmentally-conscious customers plan their green project.</li>
-        <li>Our business and financial practices are audited annually for bonding and insurance purposes, ensureing the financial strength and stability to support our projects from beginning to end.</li>
+        <li>Our business and financial practices are audited annually for bonding and insurance purposes, ensuring the financial strength and stability to support our projects from beginning to end.</li>
         <li>Buildings constructed by Wieser Brothers come with a one-year guarantee, which we back up with an eleven month walk through to address product or subcontractor warranty issues or concerns.</li>
         <li>We continue to invest in technology to ensure project efficiency and convenience. Whether it’s new office infrastructure or a new crane for the field, we make investments to achieve greater efficiencies and safety for our clients.</li>
         </ul>

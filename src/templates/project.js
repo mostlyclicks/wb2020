@@ -26,8 +26,8 @@ export const query = graphql`
                   image
                   imageSharp {
                     childImageSharp {
-                      fluid {
-                        src
+                      fluid(quality: 100) {
+                        srcWebp
 
                       }
                     }
@@ -71,7 +71,7 @@ const Project = ({ data }) => {
                       return (
                         <div id={index} className="box">
                         
-                          <img src={field.imageSharp.childImageSharp.fluid.src} alt={field.image.url} />
+                          <img src={field.imageSharp.childImageSharp.fluid.srcWebp} alt={field.image.url} />
                         
                         </div>
                         )
