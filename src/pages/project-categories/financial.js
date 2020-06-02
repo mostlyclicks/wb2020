@@ -1,55 +1,50 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
-import Layout from "../components/layout"
-import RandomTestimonial from "../components/testimonials"
-import { device } from "../components/media-queries"
-import bgImg from "../images/DJI_0027.jpg"
-import bgImg2 from "../images/trust-partnership-excellence.png"
-import MainSubnav from "../components/Subnavs/main-subnav"
+import Layout from "../../components/layout"
+import "../../components/layout.css"
+import { device } from "../../components/media-queries"
+import bgImg from "../../images/DJI_0027.jpg"
+import bgImg2 from "../../images/trust-partnership-excellence.png"
+import MainSubnav from "../../components/Subnavs/main-subnav"
 
 
-const Projects = ( {data} ) => {
+const Financial = ({data}) => {
 
-  const projects = data.prismic.allProjects.edges
+  const CatProjects = data.prismic.allProjects.edges
 
   return (
     <Layout>
-    <ProjectWrapper>
-        <L2MainImage >
+      <ProjectWrapper>
+        <L2MainImage>
           <L2Title>
-            <h1>Featured Projects</h1>
+            <h1>Financial</h1>
           </L2Title>
         </L2MainImage>
         <MainContent>
-            
-            <ProjectList>
-              {projects.map(project => {
-                return (
-                  <ProjectItem>
-                    <h3>
-                      <Link to={`/projects/${project.node._meta.uid}`}>
-                        {RichText.asText(project.node.title)}
-
-                      </Link>
-                    </h3>
-
-                    {project.node.body.map(({ fields }) => {
-                      const firstImage = fields[0]
-                      return (
-                        <div className="thumbnail">
-                          <img src={firstImage.image.url} alt={firstImage.image.alt} style={{ width: `100%` }} />
-                        </div>
-                      )
-                    })}
-                  </ProjectItem>
-                )
-              })}
-            </ProjectList>
+          <ProjectList>
+            {CatProjects.map(proj => {
+              return (
+                <ProjectItem>
+                  <h3>
+                    <Link to={`/projects/${proj.node._meta.uid}`}>
+                      {RichText.asText(proj.node.title)}
+                    </Link>
+                  </h3>
+                  {proj.node.body.map(({ fields }) => {
+                    const firstImage = fields[0]
+                    return (
+                      <div className="thumbnail">
+                        <img src={firstImage.image.url} alt={firstImage.image.alt} style={{ width: `100%` }} />
+                      </div>
+                    )
+                  })}
+                </ProjectItem>
+              )
+            })}
+          </ProjectList>
           <L2Navigation>
-          
-            
             <MainSubnav subnav="projectcat" />
           </L2Navigation>
         </MainContent>
@@ -58,38 +53,37 @@ const Projects = ( {data} ) => {
   )
 }
 
-export default Projects
+export default Financial
 
-export const query = graphql`
-         {
-           prismic {
-             allProjects(sortBy: meta_firstPublicationDate_DESC, where: {featured: true}) {
-               edges {
-                 node {
-                   title
-                   _meta {
-                     uid
-                   }
-                   body {
-                     ... on PRISMIC_ProjectBodyImage {
-                       fields {
-                         image
-                       }
-                     }
-                   }
-                   
-                 }
-               }
-             }
-           }
-         }
-       `
+export const FinancialProjects = graphql`
+  query {
+    prismic {
+      allProjects(where: {cat: "Financial"} ) {
+        edges {
+          node {
+            title
+            _meta {
+              uid
+            }
+            body {
+              ... on PRISMIC_ProjectBodyImage {
+                fields {
+                  image
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 const ProjectWrapper = styled.section`
   background-image:url(${bgImg2});
   background-repeat:no-repeat;
   background-position-x:100%;
-  background-position-y:500px;
+  background-position-y:470px;
   background-size:40%;
 `
 
@@ -171,7 +165,6 @@ const ProjectList = styled.div`
     grid-template-columns:1fr 1fr;
   }
 `
-
 
 const L2Navigation = styled.aside`
   display: flex;
