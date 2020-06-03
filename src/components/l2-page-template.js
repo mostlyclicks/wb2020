@@ -159,10 +159,11 @@ const L2Navigation = styled.aside`
 
   padding-top: 52px;
   ul {
+   
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
     li:nth-last-child(1) {
       border-bottom: none;
     }

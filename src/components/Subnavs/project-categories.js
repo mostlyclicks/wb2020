@@ -34,7 +34,7 @@ const ProjectCatNav = () => {
           <Link to="/project-categories/office">Office</Link>
         </li>
         <li>
-          <Link to="/project-categories/restaurants">Restaurants</Link>
+          <Link to="/project-categories/automotive">Automotive</Link>
         </li>
         <li>
           <Link to="/project-categories/retail">Retail</Link>
