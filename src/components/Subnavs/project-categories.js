@@ -7,6 +7,9 @@ const ProjectCatNav = () => {
     <div>
       <ul>
         <li>
+          <Link to="/project-categories/automotive">Automotive</Link>
+        </li>
+        <li>
           <Link to="/project-categories/cold-storage-warehousing">Cold Storage/Warehousing</Link>
         </li>
         <li>
@@ -32,9 +35,6 @@ const ProjectCatNav = () => {
         </li>
         <li>
           <Link to="/project-categories/office">Office</Link>
-        </li>
-        <li>
-          <Link to="/project-categories/automotive">Automotive</Link>
         </li>
         <li>
           <Link to="/project-categories/retail">Retail</Link>
