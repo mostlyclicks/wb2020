@@ -10,7 +10,16 @@ const GeneralContracting = () => (
       subnav={`services`}
       backgroundImage={bgImage}
       content={`
-      <p>Coming soon...</p>         
+      <p>As an industry leading general contractor, Wieser Brothers will manage all aspects of your construction project. We provide innovative solutions to your building project.</p>
+      <p>In addition, we self-perform:</p>
+      <ul> 
+        <li>Concrete Work</li>
+        <li>Carpentry</li>
+        <li>Steel Erection</li>
+        <li>Metal Stud Work</li>
+        <li>Plastering</li>
+      </ul>
+ 
     `}
     
     />
