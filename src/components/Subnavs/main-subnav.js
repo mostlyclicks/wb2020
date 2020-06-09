@@ -87,6 +87,9 @@ const ProjectSubnav = () => (
         <Link to="/project-categories/financial">Financial</Link>
       </li>
       <li>
+        <Link to="/project-categories/healthcare-dental">Healthcare/Dental</Link>
+      </li>
+      <li>
         <Link to="/project-categories/lodging-multi-dwelling">Lodging/Multi-Dwelling</Link>
       </li>
       <li>
