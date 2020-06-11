@@ -23,7 +23,7 @@ const TopNav = () => {
           <Link to="/firm/careers">Careers</Link>
         </li>
         <li>
-          <a href="/#">Submit Bids</a>
+          <a href="mailto:bids@wieserbrothers.com">Submit Bids</a>
         </li>
         <li>
           <Link to="/">Info</Link>
