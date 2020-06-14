@@ -35,7 +35,9 @@ const Educational = ({data}) => {
                     const firstImage = fields[0]
                     return (
                       <div className="thumbnail">
-                        <img src={firstImage.image.url} alt={firstImage.image.alt} style={{ width: `100%` }} />
+                        {firstImage.image &&
+                          <img src={firstImage.image.url} alt={firstImage.image.alt} style={{ width: `100%` }} />
+                        }
                       </div>
                     )
                   })}
