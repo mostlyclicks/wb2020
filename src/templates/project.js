@@ -133,6 +133,7 @@ const MainDiv = styled.div`
       padding-top:150px;
       height:20vh;
       margin-top:-150px;
+      
       // grid-area:1/1/3/6;
     }
   div:nth-child(2) {
@@ -146,7 +147,7 @@ const MainDiv = styled.div`
     padding:0px;
     // grid-template-columns:1fr 1fr 1fr 1fr 1fr;
     // grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-    margin-top:-170px;
+    margin-top:-200px;
     div {
       img {
         height:100%;
