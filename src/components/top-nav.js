@@ -42,9 +42,7 @@ const TopNav = () => {
 
 export default TopNav
 
- // <li>
-//   <a href="/msds">MSDS</a>
-// </li>
+
 
 // STYLES ––––––––––––––––––––––––– //
 

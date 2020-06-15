@@ -98,9 +98,9 @@ const ProjectSubnav = () => (
       <li>
         <Link to="/project-categories/office">Office</Link>
       </li>
-
-
-
+      <li>
+        <Link to="/project-categories/restaurants">Restaurants</Link>
+      </li>
       <li>
         <Link to="/project-categories/retail">Retail</Link>
       </li>
