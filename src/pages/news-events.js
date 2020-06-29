@@ -75,18 +75,23 @@ const NewsEvents = props => {
               </Item>
             )
           })}
+            
         </NewsList>
-          <div>
-            <button disabled={page <= 0} onClick={onPreviousClick}>
-              prev page
-        </button>
-            <button disabled={!data.allNews_and_eventss.pageInfo.hasNextPage} onClick={onNextClick}>
-              next page
-        </button>
-          </div>
+          
+
+          
         <L2Navigation>
+            
           <RandomTestimonial />
         </L2Navigation>
+          <PaginationNav>
+            <button disabled={page <= 0} onClick={onPreviousClick}>
+              &larr;Newer Articles
+              </button>
+            <button disabled={!data.allNews_and_eventss.pageInfo.hasNextPage} onClick={onNextClick}>
+              Older Articles&rarr;
+              </button>
+          </PaginationNav>
       </MainContent>
       </NewsWrapper>
     </Layout>
@@ -122,6 +127,25 @@ export const query = graphql`
         
       }
     }
+  }
+`
+
+const PaginationNav = styled.div`
+  
+  display:flex;
+  justify-content:space-between;
+  margin-right:20px;
+  padding:3rem;
+  
+  button {
+    font-family:'Open Sans';
+    border-radius:10px;
+    border:none;
+    padding:1rem;
+    font-size:16px;
+    &:hover {background-color:;#fff;}
+
+    
   }
 `
 
@@ -273,3 +297,4 @@ const ItemImg = styled.div`
     
   }
 `
+
