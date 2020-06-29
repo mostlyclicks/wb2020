@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useEffect, useRef } from 'react';
 import { Link, graphql } from "gatsby"
+import { getCursorFromDocumentIndex } from 'gatsby-source-prismic-graphql';
 import Moment from "react-moment"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
@@ -11,9 +12,35 @@ import bgImg2 from "../images/trust-partnership-excellence.png"
 
 
 
-const NewsEvents = ( {data} ) => {
+const NewsEvents = props => {
+  const limit = 9;
+  const didMountRef = useRef(false);
+  const [page, setPage] = React.useState(-1);
+  const [data, setData] = React.useState(props.data.prismic);
+  // const newsEvents = data.prismic.allNews_and_eventss.edges
+  console.log(page)
 
-  const newsEvents = data.prismic.allNews_and_eventss.edges
+  // if (!data) {
+  //   return <div>no data</div>;
+  // }
+
+  const onPreviousClick = () => {
+    setPage(page - limit)
+    console.log(page)
+  };
+  const onNextClick = () => setPage(page + limit);
+
+  useEffect(() => {
+    if (!didMountRef.current) {
+      didMountRef.current = true;
+      return;
+    }
+
+    props.prismic
+      .load({ variables: { after: getCursorFromDocumentIndex(page) } })
+      .then(res => setData(res.data));
+  }, [page]);
+  
 
   return (
     <Layout>
@@ -24,8 +51,9 @@ const NewsEvents = ( {data} ) => {
         </L2Title>
       </L2MainImage>
       <MainContent>
+       
         <NewsList>
-          {newsEvents.map(article => {
+            {data.allNews_and_eventss.edges.map(article => {
             return (
               <Item>
                 <Link to={`/news-events/${article.node._meta.uid}`}>
@@ -48,6 +76,14 @@ const NewsEvents = ( {data} ) => {
             )
           })}
         </NewsList>
+          <div>
+            <button disabled={page <= 0} onClick={onPreviousClick}>
+              prev page
+        </button>
+            <button disabled={!data.allNews_and_eventss.pageInfo.hasNextPage} onClick={onNextClick}>
+              next page
+        </button>
+          </div>
         <L2Navigation>
           <RandomTestimonial />
         </L2Navigation>
@@ -63,9 +99,16 @@ export default NewsEvents
 // get list of all news-events
 
 export const query = graphql`
+  query ($limit: Int = 9, $last: Int, $after: String, $before: String)
   {
     prismic {
-      allNews_and_eventss(sortBy: date_published_DESC) {
+      allNews_and_eventss(first: $limit, last: $last, after: $after, before: $before, sortBy: date_published_DESC) {
+        pageInfo {
+          startCursor
+          hasNextPage
+          hasPreviousPage
+          endCursor
+        }
         edges {
           node {
             title
@@ -76,6 +119,7 @@ export const query = graphql`
             date_published
           }
         }
+        
       }
     }
   }
