@@ -35,21 +35,6 @@ export const query = graphql`
         node {
           title
           news_event_long_description
-          body {
-            ... on PRISMIC_News_and_eventsBodyNews_event_images {
-              type
-              label
-              fields {
-                imagesSharp {
-                  childImageSharp {
-                    fluid(quality: 80) {
-                      srcWebp
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
       }
     }
