@@ -7,6 +7,7 @@ import MainSubnav from "./Subnavs/main-subnav"
 // import SideBarAddress from "./Subnavs/address-sidebar"
 import RandomTestimonial from "./testimonials"
 import bgImg from "../images/trust-partnership-excellence.png"
+import { RichText } from "prismic-reactjs"
 
 const L2PagesLayout = props => (
   <Layout>
@@ -20,8 +21,11 @@ const L2PagesLayout = props => (
       </L2MainImage>
       <Content>
         <MainContent>
-          
+          {/* 
           <div dangerouslySetInnerHTML={{ __html: props.content }} />
+          */}
+
+          {RichText.render(props.content)}
         </MainContent>
 
         <L2Navigation>
@@ -95,6 +99,7 @@ const MainContent = styled.main`
   font-family:'Open Sans';
   font-weight:400 !important;
   margin-top:2.5rem;
+  img {width:50%;float:right;margin:1rem;margin-right:0rem;margin-top:0;}
 `
 const L2Title = styled.div`
 width:100%;

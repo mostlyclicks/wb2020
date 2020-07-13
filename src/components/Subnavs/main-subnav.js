@@ -21,6 +21,9 @@ const FirmSubnav = () => (
   <>
     <ul>
       <li>
+        <Link to="/firm">Our Firm</Link>
+      </li>
+      <li>
         <Link to="/firm/history">History</Link>
       </li>
       <li>
@@ -42,6 +45,9 @@ const FirmSubnav = () => (
 const ServicesSubnav = () => (
   <>
     <ul>
+      <li>
+        <Link to="/services">Our Services</Link>
+      </li>
       <li>
         <Link to="/services/general-contracting">General Contracting</Link>
       </li>

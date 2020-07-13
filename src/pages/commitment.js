@@ -1,36 +1,37 @@
 import React from 'react'
 import L2PagesLayout from "../components/l2-page-template"
 import bgImage from "../images/WieserBrothers-commitment-DJI_0770.jpg"
-import block2 from "../images/1JeffBrian2017.jpeg"
 
 
-const OurCommitment = () => (
+const OurCommitment = ({data}) => {
+
+const CommitmentData = data.prismic.allCommitmens.edges[0]
+
+return (
   <L2PagesLayout 
       title = {`Our Commitment`}
       subnav = {`commitment`}
       backgroundImage={bgImage}
-      content = {`
-        <img src=${block2} alt="Jeff and Brian Wieser" width="50%" style="float:right;margin-left:2rem;margin-bottom:1rem;margin-top:3rem;"/>
-        <h3>Trust</h3>
-        
-        <p>Our mission at Wieser Brothers is to deliver an exceptional construction experience built on integrity, partnership, and excellence, while caring for our employees, communities, and environments.  Our entire team live out this mission every day.</p>
-        <p>Trust is the cornerstone of any Wieser Brothers project. Over 60% of annual sales is repeat business from satisfied clients.</p>
-        <h3>Partnership</h3>
-        <p>Wieser Brothers is an expert at partnering and it shows through out the design/build process. We listen closely to our clients so we can achieve the best outcome for your plans, your budget and your schedule. This open approach supports the sharing of ideas from a project's earliest stages, allowing us to more effectively manage time, cost and quality. Wieser Brothers places a high value on two-way communication so our project owners are fully aware of construction progress and can always receive a prompt response to their questions or concerns.</p>
-        <p>Whether the project is large or small, Wieser Brothers goal is to provide the highest standards of value and service from concept to completion, at a competitive price. In the end, we are partners in a project that you're proud to be part of, one that will meet your needs now and into the future. Nearly 85% of our business is design/build, making Wieser Brothers and experienced leader in one of the most significant trends in design and construction today.</p>
-        <h3>Excellence</h3>
-        <p><strong>The Wieser Brothers Advantage</strong>
-        </p>
-        <p>Clients place their trust in Wieser Brothers for exceptional performance and craftsmanship. The advantage of working with us doesn't stop there.</p>
-        <ul>
-        <li>Wieser Brothers attention to federal and state safety standards is a matter of policy and practice, resulting in an exemplary safety record within the construction industry.</li>
-        <li>As a member of the U.S. Green Building Council, Wieser Brothers promotes awareness of the latest sustainable building techniques and principles, particularly those that are competitive with conventional counterparts. Our team includes an experienced LEED Accredited Professional who can help environmentally-conscious customers plan their green project.</li>
-        <li>Our business and financial practices are audited annually for bonding and insurance purposes, ensuring the financial strength and stability to support our projects from beginning to end.</li>
-        <li>Buildings constructed by Wieser Brothers come with a one-year guarantee, which we back up with an eleven month walk through to address product or subcontractor warranty issues or concerns.</li>
-        <li>We continue to invest in technology to ensure project efficiency and convenience. Whether it’s new office infrastructure or a new crane for the field, we make investments to achieve greater efficiencies and safety for our clients.</li>
-        </ul>
-      `}
-      />
-)
+      content={CommitmentData.node.page_body}
+   />
+  )
+}
+
+export const CommitmentQuery = graphql`
+query {
+  prismic {
+    allCommitmens {
+      edges {
+        node {
+          page_title
+          page_body
+          meta_title
+          meta_description
+        }
+      }
+    }
+  }
+}
+`
 
 export default OurCommitment
