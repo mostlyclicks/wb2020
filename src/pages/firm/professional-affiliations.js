@@ -20,7 +20,7 @@ const ProfessionalAffiliations = ({data}) => {
 )
 }
 
-export const ProfAffQuery = graphql`
+export const query = graphql`
 query {
   prismic {
     allProfessional_affiliationss {

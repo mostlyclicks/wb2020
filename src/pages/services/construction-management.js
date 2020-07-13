@@ -19,7 +19,7 @@ const ConstructionManagement = ({data}) => {
 
 export default ConstructionManagement
 
-export const ConstructionManagementData = graphql`
+export const query = graphql`
   query {
     prismic {
       allConstruction_managements {

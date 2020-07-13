@@ -21,7 +21,7 @@ const Safety = ({data}) => {
 )
 }
 
-export const SafetyQuery = graphql`
+export const query = graphql`
   query {
     prismic {
       allSafetys {

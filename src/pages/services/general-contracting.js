@@ -21,7 +21,7 @@ const GeneralContracting = ({data}) => {
   )
 }
 
-export const GenContracting = graphql`
+export const query = graphql`
   query {
       prismic {
         allGeneral_contractings {

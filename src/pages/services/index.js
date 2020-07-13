@@ -19,7 +19,7 @@ const OurServices = ({data}) => {
   )
 }
 
-export const ServicesQuery = graphql` 
+export const query = graphql` 
 query {
   prismic {
     allServicess {

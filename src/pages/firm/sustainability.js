@@ -21,7 +21,7 @@ const Sustainability = ({data}) => {
 )
 }
 
-export const SustainabilityQuery = graphql`
+export const query = graphql`
 query {
   prismic {
     allSustainabilitys {

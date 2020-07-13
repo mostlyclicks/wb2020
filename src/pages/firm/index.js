@@ -19,7 +19,7 @@ return (
 )
 }
 
-export const OurFirmQuery = graphql`
+export const query = graphql`
 query {
   prismic {
     allOur_firms {

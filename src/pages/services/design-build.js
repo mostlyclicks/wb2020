@@ -19,7 +19,7 @@ return (
 )
 }
 
-export const DesignBuildQuery = graphql`
+export const query = graphql`
 query {
   prismic {
     allDesignBuilds {
