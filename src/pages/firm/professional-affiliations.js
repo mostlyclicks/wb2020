@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import L2PagesLayout from "../../components/l2-page-template"
 import bgImage from "../../images/ABC-wi.jpg"
 
