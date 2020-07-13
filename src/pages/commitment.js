@@ -17,7 +17,7 @@ return (
   )
 }
 
-export const CommitmentQuery = graphql`
+export const query = graphql`
 query {
   prismic {
     allCommitmens {
