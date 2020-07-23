@@ -26,7 +26,7 @@ const TopNav = () => {
           <a href="mailto:bids@wieserbrothers.com">Submit Bids</a>
         </li>
         <li>
-          <Link to="mailto:info@wieserbrothers.com">Info</Link>
+          <a href="mailto:info@wieserbrothers.com">Info</a>
         </li>
        
         <li>
