@@ -28,9 +28,9 @@ const HomeGrid = () => {
         </GridItem>
         <GridItem>
           <GridBox>
-            <h1>News &amp; Events</h1>
+            <h1>Projects</h1>
             
-            <Link to="/news-events">Read more</Link>
+            <Link to="/projects">View projects</Link>
           </GridBox>
         </GridItem>
         <GridItem></GridItem>
