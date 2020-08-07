@@ -8,7 +8,8 @@ import MainSubnav from "../../components/Subnavs/main-subnav"
 // import RandomTestimonial from "./testimonials"
 // import SideBarddress from "../../components/Subnavs/address-sidebar"
 
-import bgImage from "../../images/wieser-brothers-employment.jpg"
+import bgImage from "../../images/ConcreteCrew-HolmenCheese2-compressed.jpg"
+// import bgImage from "../../images/wieser-brothers-employment.jpg"
 import bgImg from "../../images/trust-partnership-excellence.png"
 import workApp from "../../images/WB-Job-Application-Fillable-Form-12-21-19.pdf"
 
@@ -201,29 +202,25 @@ const L2MainImage = styled.div`
   width:100%;
   background-size:cover;
   background-position:center;
+  background-position-y:50px;
   background-repeat:no-repeat;
   
-  @media ${device.tablet} {
-    height:350px;
-  }
+
   @media ${device.tablet} {
     height:350px;
     background-position-y:center;
   }
   @media ${device.laptop} {
     height:350px;
-    background-position-y:-600px;
-    background-size:120%;
+    background-position-y:-150px;
+    background-size:100%;
   }
   @media ${device.laptopL} {
     margin:0 auto;
     max-width:2100px;  
-    height:500px;  
-     background-position-y:-650px;
+    height:400px;  
+     background-position-y:-300px;
      background-size:100%;
-     
-
-     
   }
   @media ${device.desktop} {
     margin:0 auto;
