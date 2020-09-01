@@ -16,6 +16,7 @@ const ContactUs = () => (
         data-netlify="true"
         action="/thank-you"
       >
+        <input type="hidden" name="contact" value="Contact Form" />
         <ul>
           <li>
             <label htmlFor="name">Your Name:</label>
