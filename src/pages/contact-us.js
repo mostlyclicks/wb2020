@@ -11,12 +11,12 @@ const ContactUs = () => (
 
     <StyledFormContainer>
       <form
-        name="contact"
+        name="Contact Form"
         method="POST"
         data-netlify="true"
         action="/thank-you"
       >
-        <input type="hidden" name="contact" value="Contact Form" />
+        <input type="hidden" name="form-name" value="Contact Form" />
         <ul>
           <li>
             <label htmlFor="name">Your Name:</label>
