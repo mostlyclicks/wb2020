@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
-import VideoBG from "../../images/website-main-page-video.mp4"
+import VideoBG from "../../images/website-main-page-video-720.mp4"
 import { device } from "../media-queries"
 
 const HeroSection = () =>(
