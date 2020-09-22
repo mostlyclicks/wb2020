@@ -1,10 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
-
-// import VideoBG from "../../images/OctoberVideo-export2.mp4"
 import VideoBG from "../../images/website-main-page-video.mp4"
-// import VideoBG from "https://wb-2020.s3.amazonaws.com/WEBSITE-MAIN-SCREEN.mp4"
 import { device } from "../media-queries"
 
 const HeroSection = () =>(
