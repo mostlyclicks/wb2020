@@ -58,28 +58,28 @@ const ColdStorageWarehousing = ({data}) => {
 export default ColdStorageWarehousing
 
 export const ColdStorWare = graphql`
-  query {
-    prismic {
-      allProjects(where: {cat: "Cold Storage/Warehousing"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "cold storage warehousing") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 const ProjectWrapper = styled.section`
   background-image:url(${bgImg2});

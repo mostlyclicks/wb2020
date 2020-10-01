@@ -57,28 +57,28 @@ const LodgingMultiDwelling = ({data}) => {
 export default LodgingMultiDwelling
 
 export const LodgeMultiDwelling = graphql`
-  query {
-    prismic {
-      allProjects(where: {cat: "Lodging/Multi-Dwelling"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "lodging multi-dwelling") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 
 const ProjectWrapper = styled.section`

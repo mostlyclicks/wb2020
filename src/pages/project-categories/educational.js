@@ -57,28 +57,28 @@ const Educational = ({data}) => {
 export default Educational
 
 export const EducationalProjects = graphql`
-  query {
-    prismic {
-      allProjects(where: {cat: "Educational"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "educational") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 const ProjectWrapper = styled.section`
   background-image:url(${bgImg2});

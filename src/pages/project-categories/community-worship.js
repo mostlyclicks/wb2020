@@ -57,28 +57,28 @@ const CommunityWorship = ({data}) => {
 export default CommunityWorship
 
 export const CommWorsProjects = graphql`
-  query {
-    prismic {
-      allProjects(where: {cat: "Community/Worship"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "community worship") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 
 const ProjectWrapper = styled.section`

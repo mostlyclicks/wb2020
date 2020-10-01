@@ -57,28 +57,28 @@ const HealthDental = ({data}) => {
 export default HealthDental
 
 export const HealthDentalProjects = graphql`
-  query {
-    prismic {
-      allProjects(where: {cat: "Healthcare/Dental"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "healthcare dental") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 
 const ProjectWrapper = styled.section`

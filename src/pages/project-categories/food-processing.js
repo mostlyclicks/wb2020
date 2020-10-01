@@ -58,28 +58,28 @@ const FoodProcessing = ({data}) => {
 export default FoodProcessing
 
 export const FoodProcProjects = graphql`
-  query {
-    prismic {
-      allProjects(where: {cat: "Food Processing"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "food processing") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 
 const ProjectWrapper = styled.section`

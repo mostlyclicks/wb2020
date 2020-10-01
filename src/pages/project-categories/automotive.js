@@ -60,7 +60,7 @@ export default Automotive
 export const Auto = graphql`
   query {
     prismic {
-      allProjects(where: {cat: "Automotive"} ) {
+      allProjects(tags: "automotive") {
         edges {
           node {
             title

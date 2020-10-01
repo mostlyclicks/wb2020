@@ -60,29 +60,28 @@ const RetailCategory = ({data}) => {
 export default RetailCategory 
 
 export const Retail = graphql`
-  query {
-    
-      prismic {
-      allProjects(where: {cat: "Retail"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "retail") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 const ProjectWrapper = styled.section`
   background-image:url(${bgImg2});

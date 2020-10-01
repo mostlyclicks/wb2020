@@ -59,28 +59,28 @@ const Manufacturing = ({data}) => {
 export default Manufacturing
 
 export const ManufacturingProjects = graphql`
-  query {
-    prismic {
-      allProjects(where: {cat: "Manufacturing"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "manufacturing") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 const ProjectWrapper = styled.section`
   background-image:url(${bgImg2});

@@ -58,28 +58,28 @@ const Restaurants = ({data}) => {
 export default Restaurants
 
 export const RestaurantsProjects = graphql`
-  query {
-    prismic {
-      allProjects(where: {cat: "Restaurants"} ) {
-        edges {
-          node {
-            title
-            _meta {
-              uid
-            }
-            body {
-              ... on PRISMIC_ProjectBodyImage {
-                fields {
-                  image
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query {
+           prismic {
+             allProjects(tags: "restaurants") {
+               edges {
+                 node {
+                   title
+                   _meta {
+                     uid
+                   }
+                   body {
+                     ... on PRISMIC_ProjectBodyImage {
+                       fields {
+                         image
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 const ProjectWrapper = styled.section`
   background-image:url(${bgImg2});
