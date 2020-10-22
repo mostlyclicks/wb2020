@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, graphql } from "gatsby"
-import { getCursorFromDocumentIndex } from 'gatsby-source-prismic-graphql';
+//import { getCursorFromDocumentIndex } from 'gatsby-source-prismic-graphql';
 import Moment from "react-moment"
 import { RichText } from "prismic-reactjs"
 import styled from "styled-components"
@@ -13,12 +13,13 @@ import bgImg2 from "../images/trust-partnership-excellence.png"
 
 
 const NewsEvents = props => {
-  const limit = 9;
+  const limit = 6;
   const didMountRef = useRef(false);
   const [page, setPage] = React.useState(-1);
   const [data, setData] = React.useState(props.data.prismic);
   // const newsEvents = data.prismic.allNews_and_eventss.edges
   console.log(page)
+  console.log(data.allNews_and_eventss.pageInfo.endCursor)
 
   // if (!data) {
   //   return <div>no data</div>;
@@ -37,7 +38,8 @@ const NewsEvents = props => {
     }
 
     props.prismic
-      .load({ variables: { after: getCursorFromDocumentIndex(page) } })
+      .load({ variables: { after: data.allNews_and_eventss.pageInfo.endCursor } })
+      // .load({ variables: { after: getCursorFromDocumentIndex(page) } })
       .then(res => setData(res.data));
   }, [page]);
   
@@ -51,25 +53,32 @@ const NewsEvents = props => {
         </L2Title>
       </L2MainImage>
       <MainContent>
-       
+        
         <NewsList>
+           
             {data.allNews_and_eventss.edges.map(article => {
             return (
+             
               <Item>
                 <Link to={`/news-events/${article.node._meta.uid}`}>
-                  <ItemImg
-                    style={{
-                      backgroundImage:
-                        "url(" + article.node.thumbnail.url + ")"
-                    }}
-                  ></ItemImg>
+                
+                 { article.node.thumbnail.url &&
+                    <ItemImg
+                      style={{
+                        backgroundImage:
+                          "url(" + article.node.thumbnail.url + ")"
+                      }}
+                    ></ItemImg>
+                  }
+                {/* */}
                   <ItemArticle>
                     <small>
                       <Moment format="MMMM D, YYYY">
                         {article.node.date_published}
                       </Moment>
                     </small>
-                    <h3>{RichText.asText(article.node.title)}</h3>
+                    <h3>{RichText.asText(article.node.title)} </h3>
+                    
                   </ItemArticle>
                 </Link>
               </Item>
@@ -104,7 +113,7 @@ export default NewsEvents
 // get list of all news-events
 
 export const query = graphql`
-  query ($limit: Int = 9, $last: Int, $after: String, $before: String)
+  query ($limit: Int = 6, $last: Int, $after: String, $before: String)
   {
     prismic {
       allNews_and_eventss(first: $limit, last: $last, after: $after, before: $before, sortBy: date_published_DESC) {
@@ -260,13 +269,15 @@ const Item = styled.div`
   color: #444;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 100%;
+  max-height:500px;
   position: relative;
   top: 0;
   transition: all 0.1s ease-in;
   @media {device.tablet} {
-    // max-height:400px;
+    //max-height:400px;
+    //min-height:60%;
   }
 `
 
@@ -292,6 +303,7 @@ const ItemImg = styled.div`
   padding-bottom: 90%;
   background-size: cover;
   background-position: center center;
+  
   @media {device.tablet} {
     padding-bottom:50%;
     

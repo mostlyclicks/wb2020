@@ -17,51 +17,51 @@ const ContactUs = () => (
         <ul>
           <li>
             <label htmlFor="name">Your Name:</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" aria-label="name" />
           </li>
           <li>
             <label htmlFor="email">Your Email:</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" aria-label="email" />
           </li>
           <li>
             <label htmlFor="business-name">Business name:</label>
-            <input type="text" name="business-name" id="business-name" />
+            <input type="text" name="business-name" id="business-name" aria-label="Business name" />
           </li>
           <li>
             <label htmlFor="phone">Phone:</label>
-            <input type="text" name="phone" id="phone" />
+            <input type="text" name="phone" id="phone" aria-label="Phone"/>
           </li>
           <li>
             <label htmlFor="address-1">Address 1:</label>
-            <input type="text" name="address-1" id="address-1"/>
+            <input type="text" name="address-1" id="address-1" aria-label="Address 1"/>
           </li>
           <li>
             <label htmlFor="address-2">Address 2:</label>
-            <input type="text" name="address-2" id="address-2" />
+            <input type="text" name="address-2" id="address-2" aria-label="Address 1" />
           </li>
           <li>
             <label htmlFor="city">City:</label>
-            <input type="text" name="city" id="city" />
+            <input type="text" name="city" id="city" aria-label="City"/>
           </li>
           <li>
             <label htmlFor="state">State:</label>
-            <input type="text" name="state" id="state" />
+            <input type="text" name="state" id="state" aria-label="State" />
           </li>
           <li>
             <label htmlFor="zip">Zip:</label>
-            <input type="text" name="zip" id="zip" />
+            <input type="text" name="zip" id="zip"  aria-label="Zip"/>
           </li>
           <li>
             <label htmlFor="fax">Fax:</label>
-            <input type="text" name="fax" id="fax"/>
+            <input type="text" name="fax" id="fax" aria-label="Fax"/>
           </li>
           <li>
             <label htmlFor="project-date">Project date:</label>
-            <input type="text" name="project-date" id="project-date" />
+            <input type="text" name="project-date" id="project-date" aria-label="Project date"/>
           </li>
           <li>
             <label htmlFor="project-type">Project Type: </label>
-            <select name="project-type[]" id="project-type">
+            <select name="project-type[]" id="project-type" aria-label="Project Type" >
               <option value="commercial">Commercial</option>
               <option value="agricultural">Agricultural</option>
               <option value="institutional">Institutional</option>
@@ -72,11 +72,11 @@ const ContactUs = () => (
           </li>
           <li id="message">
             <label htmlFor="message">Message:</label>
-            <textarea name="message" rows="8" id="message"></textarea>
+            <textarea name="message" rows="8" id="message" aria-label="Message"></textarea>
           </li>
           <li>
             <label htmlFor="submit"></label>
-            <button type="submit" id="submit">Send</button>
+            <button type="submit" id="submit" aria-label="Submit">Send</button>
           </li>
         </ul>
       </form>
