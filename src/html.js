@@ -25,6 +25,7 @@ export default function HTML(props) {
           algoliasearchNetlify({
             appId: 'C0PMZKKUSZ',
             apiKey: 'be2200e8fddb7c475fb94849fca045da',
+            apiKey: ${process.env.GATSBY_ALGOLIA_SEARCH_KEY},
             
             siteId: '24415d23-86bc-4bfe-b767-1a678466cc9c',
             branch: 'master',
