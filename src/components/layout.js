@@ -19,8 +19,13 @@ const Layout = ({ children }) => {
         <TopNav />
         <Header />
         
-        <ContentDiv>{children}</ContentDiv>
-        <input id="search" type="search" placeholder="Search for content" />
+        <ContentDiv>
+          
+          {children}
+          <input id="search" type="search" placeholder="Search for content..." />
+          
+        </ContentDiv>
+        
         
         <Footer />
         
@@ -36,6 +41,14 @@ Layout.propTypes = {
 export default Layout
 
 const ContentDiv = styled.div`
-
-
+  input[type=search] {
+    width:100%;
+    border:none;
+    border-bottom:1px solid #cdcdcd;
+    line-height:.5em;
+    padding:.6em 20px;
+    font-size:2em;
+    background-color:transparent;
+  }
+  
 `

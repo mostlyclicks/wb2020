@@ -26,8 +26,9 @@ import BGImg from '../../images/slants2.png'
 
         {navbarOpen ? (
           <Navbox>
+          
             <NavbarLinks menuLinks={menuLinks} />
-            
+          
           </Navbox>
         ) : (
             <Navbox open>
