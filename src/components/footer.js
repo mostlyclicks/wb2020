@@ -33,11 +33,6 @@ const Footer = () => {
               <li>
                 <Link to="/news-events">News & Events</Link>
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <ul>
               <li>
                 <a href="http://planroom.wieserbrothers.com/" 
                 target="_blank"
@@ -50,6 +45,11 @@ const Footer = () => {
               <li>
                 <Link to="/firm/careers">Careers</Link>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <ul>
               <li>
                 <a href="mailto:bids@wieserbrothers.com">Submit Bids</a>
               </li>
@@ -71,6 +71,15 @@ const Footer = () => {
               </li>
               <li>
                 <a href="https://identity.team.viewpoint.com/account/login?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dmyviewpoint-portal-production%26redirect_uri%3Dhttps%253A%252F%252Fteam.viewpoint.com%252Fsignin-oidc%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520email%2520roles%2520microservice%2520offline_access%26response_mode%3Dform_post%26nonce%3D637249843466696082.YWNiZmJmOGQtYmEzZS00NDNhLWJkYmQtMWI4ZWQ4MGYwN2QwYjgyZDRkMDItYWRlMC00NjZjLTkxZDktYTFiNWVlNDcyYTU1%26acr_values%3Dmetrics%253AeyJscHQiOiI2MzcyNDk4NDM0NjY2OTY4ODQifQ%253D%253D%26state%3DCfDJ8HmUSfCiWOVAv7zeL4EwEITrOqsvhgPUevNxH-RaDgdU9gUenZpK8bGvio4IWgNTgFxTt0SWKjiR9we4JXRybT4wIcxmmc8PYryaBWTuVlHhN0vEiGi1ZRHfKc5NQqsggMMNHrz7rI-M25qDg-TzCBem6tWkJh3slZZsrUV-Tp--sYs6R-Dpk5UZuFSFoJgE1UY88G6rNJDgnCuVS5CdklFs_5ZuIm5t0LA7m1-kC3_4ZMR4edxbrZor6Y_usdyC6ggaYjgmjTLCZGb-6sxdXhwp7H_PgxXM5zS9YH10rsZ4V4Xa-Fki7K_9Datjn74YEfxUumncTBEckfN54Yk--1c" rel="noopener noreferrer" target="_blank">Subcontractors</a>
+              </li>
+              <li>
+                <Link to="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/terms-of-service">Terms of Service</Link>
+              </li>
+              <li>
+                <Link to="/cookie-policy">Cookie Policy</Link>
               </li>
             </ul>
           </div>
