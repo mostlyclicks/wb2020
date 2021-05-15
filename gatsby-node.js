@@ -36,7 +36,8 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
 
-firstTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10) {
+
+    firstTwenty: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 20) {
       totalCount
       edges {
         node {
@@ -51,7 +52,7 @@ firstTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10)
     }
     
     
-    secondTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10, after: "YXJyYXljb25uZWN0aW9uOjk=") {
+    secondTwenty: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 20, after: "YXJyYXljb25uZWN0aW9uOjE5") {
       edges {
         node {
           title
@@ -65,7 +66,7 @@ firstTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10)
     }
     
     
-    thirdTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10, after: "YXJyYXljb25uZWN0aW9uOjE5") {
+    thirdTwenty: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 20, after: "YXJyYXljb25uZWN0aW9uOjM5") {
       edges {
         node {
           title
@@ -77,34 +78,11 @@ firstTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10)
         cursor
       }
     }
-    
-    
-    fourTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10, after: "YXJyYXljb25uZWN0aW9uOjI5") {
-      edges {
-        node {
-          title
-          _meta {
-            uid
-          }
-          date_published
-        }
-        cursor
-      }
-    }
-    
-    
-  	fiveTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10, after: "YXJyYXljb25uZWN0aW9uOjM5") {
-      edges {
-        node {
-          title
-          _meta {
-            uid
-          }
-          date_published
-        }
-        cursor
-      }
-    }
+
+
+
+
+
 
           allTestimonials {
             edges {
@@ -123,11 +101,12 @@ firstTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10)
   )
 
   const employmentOppsList = result.data.prismic.allEmployment_opportunitys.edges;
-  const newsEventsList1 = result.data.prismic.firstTen.edges;
-  const newsEventsList2 = result.data.prismic.secondTen.edges;
-  const newsEventsList3 = result.data.prismic.thirdTen.edges;
-  const newsEventsList4 = result.data.prismic.fourTen.edges;
-  const newsEventsList5 = result.data.prismic.fiveTen.edges;
+  
+  const newsEventsList1 = result.data.prismic.firstTwenty.edges;
+  const newsEventsList2 = result.data.prismic.secondTwenty.edges;
+  const newsEventsList3 = result.data.prismic.thirdTwenty.edges;
+  // const newsEventsList4 = result.data.prismic.fourthTwenty.edges;
+  
   
   const testimonialList = result.data.prismic.allTestimonials.edges;
 
@@ -185,29 +164,7 @@ firstTen: allNews_and_eventss(sortBy: meta_firstPublicationDate_DESC, first: 10)
      })
    })
 
-  newsEventsList4.forEach(edge => {
-     createPage({
-       type: 'NewsEvent',
-       match: '/news-events/:uid',
-       path: `/news-events/${edge.node._meta.uid}`,
-       component: newsEventsTemplate,
-       context: {
-         uid: edge.node._meta.uid,
-       },
-     })
-   })
 
-    newsEventsList5.forEach(edge => {
-     createPage({
-       type: 'NewsEvent',
-       match: '/news-events/:uid',
-       path: `/news-events/${edge.node._meta.uid}`,
-       component: newsEventsTemplate,
-       context: {
-         uid: edge.node._meta.uid,
-       },
-     })
-   }) 
 
   testimonialList.forEach(edge => {
     createPage({
