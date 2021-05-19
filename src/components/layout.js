@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
         <ContentDiv>
           
           {children}
-          <input id="search" type="search" placeholder="Search for content..." />
+          <input id="search" type="search" placeholder=" " />
           
         </ContentDiv>
         
